@@ -143,17 +143,17 @@ message Response {
 service ConnectionService {
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
 
-    /*rpc GetConnection(Identifier) returns (Connection) {}
+    rpc GetConnection(Identifier) returns (Connection) {}
 
-    rpc CreateConnection(Connection) returns (Identifier) {}
+    rpc UpdateMount(UpdateMountRequest) returns (Response) {}
+
+    /*rpc CreateConnection(Connection) returns (Identifier) {}
 
     rpc CreatePendingConnection(Connection) returns (Identifier) {}
 
     rpc UpdateConnection(UpdateConnectionRequest) returns (Response) {}
 
     rpc DeleteConnection(Identifier) returns (Response) {}
-
-    rpc UpdateMount(UpdateMountRequest) returns (Response) {}
 
     rpc UpdateDevice(UpdateDeviceRequest) returns (Response) {}
 
