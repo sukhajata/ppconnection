@@ -143,7 +143,7 @@ message Response {
 service ConnectionService {
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
 
-    rpc GetConnection(Identifier) returns (Connection) {}
+    /*rpc GetConnection(Identifier) returns (Connection) {}
 
     rpc CreateConnection(Connection) returns (Identifier) {}
 
@@ -165,6 +165,6 @@ service ConnectionService {
 
     rpc GetAddress(GetAddressRequest) returns (Location) {}
 
-    rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
+    rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}*/
 
 }
