@@ -1,0 +1,170 @@
+syntax = "proto3";
+
+package ppconnection;
+
+message Connections {
+    repeated Connection connections = 1;
+}
+
+message Connection {
+	bool active = 1;
+    string connectionState = 2;
+    int32 connectionType = 3;
+    string dateCreate = 4;
+	Device device = 5;
+	string IDNumber = 6;
+	int32 numPhases = 7;
+	int32 line1 = 8;
+    int32 line2 = 9;
+    int32 line3 = 10;
+    Location location = 11;
+    int32 modelType = 12;
+    Mount mount = 13;
+    string nickName = 14;
+    string type = 15;
+    repeated Job jobs = 16;
+}
+
+message Job {
+    bool active = 1;
+    string comments = 2;
+    string notes = 3;
+    string dateCreated = 4;
+    string jobState = 5;
+    string reasonForFailure = 6;
+    TestResult testResult = 7;
+}
+
+message TestResult {
+    float downlinkRSSI = 1;
+    float downlinkSNR = 2;
+    Line line1 = 3;
+    Line line2 = 4;
+    Line line3 = 5;
+    bool received = 6;
+    float software = 7;
+    float uplinkRSSI = 8;
+    float uplinkSNR = 9;
+}
+
+message Line {
+    float current = 1;
+    float voltage = 2;
+}
+
+message Location {
+    string streetAddress1 = 1;
+    string streetAddress2 = 2;
+    string town = 3;
+    string country = 4;
+    float lng = 5;
+    float lat = 6;
+}
+
+message Mount {
+    bool active = 1;
+    Location location = 2;
+    string mountNumber = 3;
+    int32 mountType = 4;
+    int32 enclosureType = 5;
+    string enclosureId = 6;
+}
+
+message Device {
+    bool active = 1;
+    string deviceEUI = 2;
+	LoRaDetails loRaDetails = 3;
+    string macAddress = 4;
+    int32 modelType = 5;
+    string mqttConnectionString = 6;
+    int32 serialNumber = 7;
+    string ppNumber = 8;
+}
+
+message LoRaDetails {
+    string applicationEUI = 1;
+    string applicationSoftwareKey = 2;
+	string deviceAddress = 3;
+	string networkSoftwareKey = 4;
+}
+
+message GetConnectionsRequest {
+    bool active = 1;
+}
+
+message Identifier {
+    string identifier = 1;
+}
+
+message UpdateConnectionRequest {
+    string identifier = 1;
+    Connection connection = 2;
+}
+
+message UpdateMountRequest {
+    string identifier = 1;
+    Mount mount = 2;
+}
+
+message UpdateDeviceRequest {
+    string identifier = 1;
+    Device device = 2;
+}
+
+message UpdateConnectionStateRequest {
+    string identifier = 1;
+    string connectionState = 2;
+}
+
+message UpdateJobRequest {
+    string identifier = 1;
+    Job job = 2;
+}
+
+message UpdateLinesRequest {
+    string identifier = 1;
+    int32 line1 = 2;
+    int32 line2 = 3;
+    int32 line3 = 4;
+}
+
+message GetAddressRequest {
+    string installNumber = 1;
+}
+
+message GetDeviceBySerialNumberRequest {
+    string serialNumber = 1;
+}
+
+message Response {
+    string reply = 1;
+}
+
+service ConnectionService {
+    rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
+
+    rpc GetConnection(Identifier) returns (Connection) {}
+
+    rpc CreateConnection(Connection) returns (Identifier) {}
+
+    rpc CreatePendingConnection(Connection) returns (Identifier) {}
+
+    rpc UpdateConnection(UpdateConnectionRequest) returns (Response) {}
+
+    rpc DeleteConnection(Identifier) returns (Response) {}
+
+    rpc UpdateMount(UpdateMountRequest) returns (Response) {}
+
+    rpc UpdateDevice(UpdateDeviceRequest) returns (Response) {}
+
+    rpc UpdateConnectionState(UpdateConnectionStateRequest) returns (Response) {}
+
+    rpc UpdateJob(UpdateJobRequest) returns (Response) {}
+
+    rpc UpdateLines(UpdateLinesRequest) returns (Response) {}
+
+    rpc GetAddress(GetAddressRequest) returns (Location) {}
+
+    rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
+
+}
