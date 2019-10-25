@@ -14,7 +14,7 @@ message Connection {
     }
     ConnectionState connectionState = 2;
     int32 connectionType = 3;
-    string dateCreate = 4;
+    string dateCreated = 4;
 	Device device = 5;
 	string IDNumber = 6;
 	int32 numPhases = 7;
