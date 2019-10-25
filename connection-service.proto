@@ -22,7 +22,7 @@ message Connection {
     Mount mount = 13;
     string nickName = 14;
     string type = 15;
-    repeated Job jobs = 16;
+    Job job = 16;
 }
 
 message Job {
