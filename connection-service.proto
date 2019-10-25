@@ -8,7 +8,11 @@ message Connections {
 
 message Connection {
 	bool active = 1;
-    string connectionState = 2;
+    enum ConnectionState {
+        PENDING = 0,
+        CONNECTED = 1
+    }
+    ConnectionState connectionState = 2;
     int32 connectionType = 3;
     string dateCreate = 4;
 	Device device = 5;
@@ -30,7 +34,13 @@ message Job {
     string comments = 2;
     string notes = 3;
     string dateCreated = 4;
-    string jobState = 5;
+    enum JobState {
+        PENDING = 0,
+        CONFIGURED = 1,
+        TESTED = 2,
+        FAILED = 3
+    }
+    JobState jobState = 5;
     string reasonForFailure = 6;
     TestResult testResult = 7;
 }
@@ -140,8 +150,14 @@ message Response {
     string reply = 1;
 }
 
+message Empty {
+
+}
+
 service ConnectionService {
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
+
+    rpc GetBlankConnection(Empty) returns (Connection) {}
 
     rpc GetConnection(Identifier) returns (Connection) {}
 
