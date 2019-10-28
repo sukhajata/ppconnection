@@ -683,7 +683,8 @@ proto.ppconnection.Connection.toObject = function(includeInstance, msg) {
     mount: (f = msg.getMount()) && proto.ppconnection.Mount.toObject(includeInstance, f),
     nickname: jspb.Message.getFieldWithDefault(msg, 14, ""),
     type: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    job: (f = msg.getJob()) && proto.ppconnection.Job.toObject(includeInstance, f)
+    job: (f = msg.getJob()) && proto.ppconnection.Job.toObject(includeInstance, f),
+    id: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
 
   if (includeInstance) {
@@ -787,6 +788,10 @@ proto.ppconnection.Connection.deserializeBinaryFromReader = function(msg, reader
       var value = new proto.ppconnection.Job;
       reader.readMessage(value,proto.ppconnection.Job.deserializeBinaryFromReader);
       msg.setJob(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -933,6 +938,13 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
       proto.ppconnection.Job.serializeBinaryToWriter
     );
   }
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
 };
 
 
@@ -940,8 +952,9 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
  * @enum {number}
  */
 proto.ppconnection.Connection.ConnectionState = {
-  PENDING: 0,
-  CONNECTED: 1
+  NOTHING: 0,
+  PENDING: 1,
+  CONNECTED: 2
 };
 
 /**
@@ -1308,6 +1321,24 @@ proto.ppconnection.Connection.prototype.hasJob = function() {
 };
 
 
+/**
+ * optional string id = 17;
+ * @return {string}
+ */
+proto.ppconnection.Connection.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ppconnection.Connection} returns this
+ */
+proto.ppconnection.Connection.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
 
 
 
@@ -1498,10 +1529,11 @@ proto.ppconnection.Job.serializeBinaryToWriter = function(message, writer) {
  * @enum {number}
  */
 proto.ppconnection.Job.JobState = {
-  PENDING: 0,
-  CONFIGURED: 1,
-  TESTED: 2,
-  FAILED: 3
+  NOTHING: 0,
+  PENDING: 1,
+  CONFIGURED: 2,
+  TESTED: 3,
+  FAILED: 4
 };
 
 /**
