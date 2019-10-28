@@ -9,8 +9,9 @@ message Connections {
 message Connection {
 	bool active = 1;
     enum ConnectionState {
-        PENDING = 0;
-        CONNECTED = 1;
+        NOTHING = 0;
+        PENDING = 1;
+        CONNECTED = 2;
     }
     ConnectionState connectionState = 2;
     int32 connectionType = 3;
@@ -35,10 +36,11 @@ message Job {
     string notes = 3;
     string dateCreated = 4;
     enum JobState {
-        PENDING = 0;
-        CONFIGURED = 1;
-        TESTED = 2;
-        FAILED = 3;
+        NOTHING = 0;
+        PENDING = 1;
+        CONFIGURED = 2;
+        TESTED = 3;
+        FAILED = 4;
     }
     JobState jobState = 5;
     string reasonForFailure = 6;
