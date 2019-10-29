@@ -389,16 +389,16 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.updateMount =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.Connection,
+ *   !proto.ppconnection.CreateConnectionRequest,
  *   !proto.ppconnection.Identifier>}
  */
 const methodDescriptor_ConnectionService_CreateConnection = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/CreateConnection',
   grpc.web.MethodType.UNARY,
-  proto.ppconnection.Connection,
+  proto.ppconnection.CreateConnectionRequest,
   proto.ppconnection.Identifier,
   /**
-   * @param {!proto.ppconnection.Connection} request
+   * @param {!proto.ppconnection.CreateConnectionRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -411,13 +411,13 @@ const methodDescriptor_ConnectionService_CreateConnection = new grpc.web.MethodD
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.Connection,
+ *   !proto.ppconnection.CreateConnectionRequest,
  *   !proto.ppconnection.Identifier>}
  */
 const methodInfo_ConnectionService_CreateConnection = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.Identifier,
   /**
-   * @param {!proto.ppconnection.Connection} request
+   * @param {!proto.ppconnection.CreateConnectionRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -428,7 +428,7 @@ const methodInfo_ConnectionService_CreateConnection = new grpc.web.AbstractClien
 
 
 /**
- * @param {!proto.ppconnection.Connection} request The
+ * @param {!proto.ppconnection.CreateConnectionRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -449,7 +449,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.createConnection =
 
 
 /**
- * @param {!proto.ppconnection.Connection} request The
+ * @param {!proto.ppconnection.CreateConnectionRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
