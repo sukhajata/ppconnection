@@ -109,6 +109,11 @@ message Identifier {
     string identifier = 1;
 }
 
+message CreateConnectionRequest {
+    string oldIdentifier = 1;
+    Connection connection = 2;
+}
+
 message UpdateConnectionRequest {
     string identifier = 1;
     Connection connection = 2;
@@ -166,7 +171,7 @@ service ConnectionService {
 
     rpc UpdateMount(UpdateMountRequest) returns (Response) {}
 
-    rpc CreateConnection(Connection) returns (Identifier) {}
+    rpc CreateConnection(CreateConnectionRequest) returns (Identifier) {}
 
     rpc CreatePendingConnection(Connection) returns (Identifier) {}
 
