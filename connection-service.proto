@@ -29,6 +29,7 @@ message Connection {
     string type = 15;
     Job job = 16;
     string id = 17;
+    string transformer = 18;
 }
 
 message Job {
