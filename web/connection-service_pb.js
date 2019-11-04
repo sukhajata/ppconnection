@@ -706,7 +706,8 @@ proto.ppconnection.Connection.toObject = function(includeInstance, msg) {
     nickname: jspb.Message.getFieldWithDefault(msg, 14, ""),
     type: jspb.Message.getFieldWithDefault(msg, 15, ""),
     job: (f = msg.getJob()) && proto.ppconnection.Job.toObject(includeInstance, f),
-    id: jspb.Message.getFieldWithDefault(msg, 17, "")
+    id: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    transformer: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -814,6 +815,10 @@ proto.ppconnection.Connection.deserializeBinaryFromReader = function(msg, reader
     case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTransformer(value);
       break;
     default:
       reader.skipField();
@@ -964,6 +969,13 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       17,
+      f
+    );
+  }
+  f = message.getTransformer();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -1358,6 +1370,24 @@ proto.ppconnection.Connection.prototype.getId = function() {
  */
 proto.ppconnection.Connection.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional string transformer = 18;
+ * @return {string}
+ */
+proto.ppconnection.Connection.prototype.getTransformer = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ppconnection.Connection} returns this
+ */
+proto.ppconnection.Connection.prototype.setTransformer = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
