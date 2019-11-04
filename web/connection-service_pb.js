@@ -1584,8 +1584,9 @@ proto.ppconnection.Job.JobState = {
   NOTHING: 0,
   PENDING: 1,
   CONFIGURED: 2,
-  TESTED: 3,
-  FAILED: 4
+  INSTALLED: 3,
+  TESTED: 4,
+  FAILED: 5
 };
 
 /**
