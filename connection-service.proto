@@ -9,12 +9,17 @@ message Connections {
 message Connection {
 	bool active = 1;
     enum ConnectionState {
-        NOTHING = 0;
+        NO_CONNECTION_STATE = 0;
         PENDING = 1;
         CONNECTED = 2;
     }
     ConnectionState connectionState = 2;
-    int32 connectionType = 3;
+    enum ConnectionType {
+        NO_CONNECTION_TYPE = 0;
+        ICP = 1;
+        ASSET = 2;
+    }
+    ConnectionType connectionType = 3;
     string dateCreated = 4;
 	Device device = 5;
 	string IDNumber = 6;
@@ -23,7 +28,12 @@ message Connection {
     int32 line2 = 9;
     int32 line3 = 10;
     Location location = 11;
-    int32 modelType = 12;
+    enum ModelType {
+        NO_MODEL_TYPE = 0;
+        M11 = 1;
+        M31 = 2;
+    }
+    ModelType modelType = 12;
     Mount mount = 13;
     string nickName = 14;
     string type = 15;
@@ -38,7 +48,7 @@ message Job {
     string notes = 3;
     string dateCreated = 4;
     enum JobState {
-        NOTHING = 0;
+        NO_JOB_STATE = 0;
         PENDING = 1;
         CONFIGURED = 2;
         INSTALLED = 3;
@@ -80,8 +90,22 @@ message Mount {
     bool active = 1;
     Location location = 2;
     string mountNumber = 3;
-    int32 mountType = 4;
-    int32 enclosureType = 5;
+    enum MountType {
+        NO_MOUNT_TYPE = 0;
+        CROSSARM = 1;
+        SWITCHBOARD = 2;
+        METER_BOX = 3;
+        SUBSTATION = 4;
+        PILLAR_BOX = 5;
+    }
+    MountType mountType = 4;
+    enum EnclosureType {
+        NO_ENCLOSURE_TYPE = 0;
+        SINGLE = 1;
+        DOUBLE = 2;
+        TRIPLE = 3;
+    }
+    EnclosureType enclosureType = 5;
     string enclosureId = 6;
 }
 

@@ -14,6 +14,8 @@ var global = Function('return this')();
 
 goog.exportSymbol('proto.ppconnection.Connection', null, global);
 goog.exportSymbol('proto.ppconnection.Connection.ConnectionState', null, global);
+goog.exportSymbol('proto.ppconnection.Connection.ConnectionType', null, global);
+goog.exportSymbol('proto.ppconnection.Connection.ModelType', null, global);
 goog.exportSymbol('proto.ppconnection.Connections', null, global);
 goog.exportSymbol('proto.ppconnection.CreateConnectionRequest', null, global);
 goog.exportSymbol('proto.ppconnection.Device', null, global);
@@ -28,6 +30,8 @@ goog.exportSymbol('proto.ppconnection.Line', null, global);
 goog.exportSymbol('proto.ppconnection.LoRaDetails', null, global);
 goog.exportSymbol('proto.ppconnection.Location', null, global);
 goog.exportSymbol('proto.ppconnection.Mount', null, global);
+goog.exportSymbol('proto.ppconnection.Mount.EnclosureType', null, global);
+goog.exportSymbol('proto.ppconnection.Mount.MountType', null, global);
 goog.exportSymbol('proto.ppconnection.Response', null, global);
 goog.exportSymbol('proto.ppconnection.TestResult', null, global);
 goog.exportSymbol('proto.ppconnection.UpdateConnectionRequest', null, global);
@@ -753,7 +757,7 @@ proto.ppconnection.Connection.deserializeBinaryFromReader = function(msg, reader
       msg.setConnectionstate(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {!proto.ppconnection.Connection.ConnectionType} */ (reader.readEnum());
       msg.setConnectiontype(value);
       break;
     case 4:
@@ -791,7 +795,7 @@ proto.ppconnection.Connection.deserializeBinaryFromReader = function(msg, reader
       msg.setLocation(value);
       break;
     case 12:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {!proto.ppconnection.Connection.ModelType} */ (reader.readEnum());
       msg.setModeltype(value);
       break;
     case 13:
@@ -864,8 +868,8 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getConnectiontype();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeEnum(
       3,
       f
     );
@@ -929,8 +933,8 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getModeltype();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeEnum(
       12,
       f
     );
@@ -986,9 +990,27 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
  * @enum {number}
  */
 proto.ppconnection.Connection.ConnectionState = {
-  NOTHING: 0,
+  NO_CONNECTION_STATE: 0,
   PENDING: 1,
   CONNECTED: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.ppconnection.Connection.ConnectionType = {
+  NO_CONNECTION_TYPE: 0,
+  ICP: 1,
+  ASSET: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.ppconnection.Connection.ModelType = {
+  NO_MODEL_TYPE: 0,
+  M11: 1,
+  M31: 2
 };
 
 /**
@@ -1028,20 +1050,20 @@ proto.ppconnection.Connection.prototype.setConnectionstate = function(value) {
 
 
 /**
- * optional int32 connectionType = 3;
- * @return {number}
+ * optional ConnectionType connectionType = 3;
+ * @return {!proto.ppconnection.Connection.ConnectionType}
  */
 proto.ppconnection.Connection.prototype.getConnectiontype = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.ppconnection.Connection.ConnectionType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {number} value
+ * @param {!proto.ppconnection.Connection.ConnectionType} value
  * @return {!proto.ppconnection.Connection} returns this
  */
 proto.ppconnection.Connection.prototype.setConnectiontype = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -1228,20 +1250,20 @@ proto.ppconnection.Connection.prototype.hasLocation = function() {
 
 
 /**
- * optional int32 modelType = 12;
- * @return {number}
+ * optional ModelType modelType = 12;
+ * @return {!proto.ppconnection.Connection.ModelType}
  */
 proto.ppconnection.Connection.prototype.getModeltype = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {!proto.ppconnection.Connection.ModelType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /**
- * @param {number} value
+ * @param {!proto.ppconnection.Connection.ModelType} value
  * @return {!proto.ppconnection.Connection} returns this
  */
 proto.ppconnection.Connection.prototype.setModeltype = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
@@ -1581,7 +1603,7 @@ proto.ppconnection.Job.serializeBinaryToWriter = function(message, writer) {
  * @enum {number}
  */
 proto.ppconnection.Job.JobState = {
-  NOTHING: 0,
+  NO_JOB_STATE: 0,
   PENDING: 1,
   CONFIGURED: 2,
   INSTALLED: 3,
@@ -2695,11 +2717,11 @@ proto.ppconnection.Mount.deserializeBinaryFromReader = function(msg, reader) {
       msg.setMountnumber(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {!proto.ppconnection.Mount.MountType} */ (reader.readEnum());
       msg.setMounttype(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {!proto.ppconnection.Mount.EnclosureType} */ (reader.readEnum());
       msg.setEnclosuretype(value);
       break;
     case 6:
@@ -2758,15 +2780,15 @@ proto.ppconnection.Mount.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getMounttype();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeEnum(
       4,
       f
     );
   }
   f = message.getEnclosuretype();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeEnum(
       5,
       f
     );
@@ -2780,6 +2802,28 @@ proto.ppconnection.Mount.serializeBinaryToWriter = function(message, writer) {
   }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.ppconnection.Mount.MountType = {
+  NO_MOUNT_TYPE: 0,
+  CROSSARM: 1,
+  SWITCHBOARD: 2,
+  METER_BOX: 3,
+  SUBSTATION: 4,
+  PILLAR_BOX: 5
+};
+
+/**
+ * @enum {number}
+ */
+proto.ppconnection.Mount.EnclosureType = {
+  NO_ENCLOSURE_TYPE: 0,
+  SINGLE: 1,
+  DOUBLE: 2,
+  TRIPLE: 3
+};
 
 /**
  * optional bool active = 1;
@@ -2855,38 +2899,38 @@ proto.ppconnection.Mount.prototype.setMountnumber = function(value) {
 
 
 /**
- * optional int32 mountType = 4;
- * @return {number}
+ * optional MountType mountType = 4;
+ * @return {!proto.ppconnection.Mount.MountType}
  */
 proto.ppconnection.Mount.prototype.getMounttype = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.ppconnection.Mount.MountType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {number} value
+ * @param {!proto.ppconnection.Mount.MountType} value
  * @return {!proto.ppconnection.Mount} returns this
  */
 proto.ppconnection.Mount.prototype.setMounttype = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
 /**
- * optional int32 enclosureType = 5;
- * @return {number}
+ * optional EnclosureType enclosureType = 5;
+ * @return {!proto.ppconnection.Mount.EnclosureType}
  */
 proto.ppconnection.Mount.prototype.getEnclosuretype = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.ppconnection.Mount.EnclosureType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {number} value
+ * @param {!proto.ppconnection.Mount.EnclosureType} value
  * @return {!proto.ppconnection.Mount} returns this
  */
 proto.ppconnection.Mount.prototype.setEnclosuretype = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
