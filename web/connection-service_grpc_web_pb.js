@@ -1109,6 +1109,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getAddress =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Address,
+ *   !proto.ppconnection.LatLng>}
+ */
+const methodDescriptor_ConnectionService_Geocode = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/Geocode',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Address,
+  proto.ppconnection.LatLng,
+  /**
+   * @param {!proto.ppconnection.Address} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.LatLng.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Address,
+ *   !proto.ppconnection.LatLng>}
+ */
+const methodInfo_ConnectionService_Geocode = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.LatLng,
+  /**
+   * @param {!proto.ppconnection.Address} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.LatLng.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Address} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.LatLng)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.LatLng>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.geocode =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/Geocode',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_Geocode,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Address} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.LatLng>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.geocode =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/Geocode',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_Geocode);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.GetDeviceBySerialNumberRequest,
  *   !proto.ppconnection.Device>}
  */

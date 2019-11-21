@@ -184,11 +184,23 @@ message Response {
     string reply = 1;
 }
 
+message Address {
+    string streetAddress = 1;
+    string town = 2;
+    string country = 3;
+}
+
+message LatLng {
+    float lat = 1;
+    float lng = 2;
+}
+
 message Empty {
 
 }
 
 service ConnectionService {
+
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
 
     rpc GetBlankConnection(Empty) returns (Connection) {}
@@ -214,6 +226,8 @@ service ConnectionService {
     rpc UpdateLines(UpdateLinesRequest) returns (Response) {}
 
     rpc GetAddress(GetAddressRequest) returns (Location) {}
+
+    rpc Geocode(Address) returns (LatLng) {}
 
     rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
 
