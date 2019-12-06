@@ -200,7 +200,7 @@ message Empty {
 }
 
 message InstMsgRequest {
-    int32 startTime = 1;
+    int64 startTime = 1;
     string deviceEUI = 2;
 }
 
@@ -209,7 +209,7 @@ message InstMsgData {
 }
 
 message InstMsgDatum {
-    int32 timestamp = 1;
+    int64 timestamp = 1;
     int32 phase = 2;
     float activepower = 3;
     float reactivepower = 4;
@@ -218,7 +218,7 @@ message InstMsgDatum {
 }
 
 message ProcMsgRequest {
-    int32 startTime = 1;
+    int64 startTime = 1;
     string deviceEUI = 2;
 }
 
@@ -227,7 +227,7 @@ message ProcMsgData {
 }
 
 message ProcMsgDatum {
-    int32 timestamp = 1;
+    int64 timestamp = 1;
     int32 phase = 2;
 	float loopimpedance = 3;
 	int32 rssi = 4;

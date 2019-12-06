@@ -1654,7 +1654,7 @@ func (m *Empty) XXX_DiscardUnknown() {
 var xxx_messageInfo_Empty proto.InternalMessageInfo
 
 type InstMsgRequest struct {
-	StartTime            int32    `protobuf:"varint,1,opt,name=startTime,proto3" json:"startTime,omitempty"`
+	StartTime            int64    `protobuf:"varint,1,opt,name=startTime,proto3" json:"startTime,omitempty"`
 	DeviceEUI            string   `protobuf:"bytes,2,opt,name=deviceEUI,proto3" json:"deviceEUI,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -1686,7 +1686,7 @@ func (m *InstMsgRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_InstMsgRequest proto.InternalMessageInfo
 
-func (m *InstMsgRequest) GetStartTime() int32 {
+func (m *InstMsgRequest) GetStartTime() int64 {
 	if m != nil {
 		return m.StartTime
 	}
@@ -1740,7 +1740,7 @@ func (m *InstMsgData) GetRows() []*InstMsgDatum {
 }
 
 type InstMsgDatum struct {
-	Timestamp            int32    `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Timestamp            int64    `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	Phase                int32    `protobuf:"varint,2,opt,name=phase,proto3" json:"phase,omitempty"`
 	Activepower          float32  `protobuf:"fixed32,3,opt,name=activepower,proto3" json:"activepower,omitempty"`
 	Reactivepower        float32  `protobuf:"fixed32,4,opt,name=reactivepower,proto3" json:"reactivepower,omitempty"`
@@ -1776,7 +1776,7 @@ func (m *InstMsgDatum) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_InstMsgDatum proto.InternalMessageInfo
 
-func (m *InstMsgDatum) GetTimestamp() int32 {
+func (m *InstMsgDatum) GetTimestamp() int64 {
 	if m != nil {
 		return m.Timestamp
 	}
@@ -1819,7 +1819,7 @@ func (m *InstMsgDatum) GetVoltage() float32 {
 }
 
 type ProcMsgRequest struct {
-	StartTime            int32    `protobuf:"varint,1,opt,name=startTime,proto3" json:"startTime,omitempty"`
+	StartTime            int64    `protobuf:"varint,1,opt,name=startTime,proto3" json:"startTime,omitempty"`
 	DeviceEUI            string   `protobuf:"bytes,2,opt,name=deviceEUI,proto3" json:"deviceEUI,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -1851,7 +1851,7 @@ func (m *ProcMsgRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ProcMsgRequest proto.InternalMessageInfo
 
-func (m *ProcMsgRequest) GetStartTime() int32 {
+func (m *ProcMsgRequest) GetStartTime() int64 {
 	if m != nil {
 		return m.StartTime
 	}
@@ -1905,7 +1905,7 @@ func (m *ProcMsgData) GetRows() []*ProcMsgDatum {
 }
 
 type ProcMsgDatum struct {
-	Timestamp            int32    `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Timestamp            int64    `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	Phase                int32    `protobuf:"varint,2,opt,name=phase,proto3" json:"phase,omitempty"`
 	Loopimpedance        float32  `protobuf:"fixed32,3,opt,name=loopimpedance,proto3" json:"loopimpedance,omitempty"`
 	Rssi                 int32    `protobuf:"varint,4,opt,name=rssi,proto3" json:"rssi,omitempty"`
@@ -1946,7 +1946,7 @@ func (m *ProcMsgDatum) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ProcMsgDatum proto.InternalMessageInfo
 
-func (m *ProcMsgDatum) GetTimestamp() int32 {
+func (m *ProcMsgDatum) GetTimestamp() int64 {
 	if m != nil {
 		return m.Timestamp
 	}
@@ -2162,7 +2162,7 @@ var fileDescriptor_80f86ad761877d5c = []byte{
 	0x60, 0xca, 0x22, 0xb4, 0xcd, 0x2c, 0xa2, 0x9c, 0x63, 0x11, 0xf8, 0x15, 0xd4, 0x46, 0x36, 0x1b,
 	0x65, 0xec, 0xa1, 0x94, 0xb2, 0x87, 0x84, 0x61, 0x68, 0x29, 0xc3, 0xc0, 0xbb, 0x50, 0x35, 0x97,
 	0x01, 0xbb, 0xc3, 0x23, 0x68, 0x5b, 0x5e, 0xc4, 0xce, 0xa2, 0xeb, 0xe4, 0x6d, 0x0f, 0xa0, 0x11,
-	0x31, 0x3b, 0x64, 0x33, 0x67, 0x19, 0x37, 0xa1, 0x2a, 0xc9, 0x80, 0xed, 0xb3, 0x08, 0xff, 0x16,
+	0x31, 0x3b, 0x64, 0x33, 0x67, 0x19, 0x37, 0xa1, 0x32, 0xc9, 0x80, 0xed, 0xb3, 0x08, 0xff, 0x16,
 	0x9a, 0xd2, 0xdb, 0xc0, 0x66, 0x36, 0x7a, 0x0d, 0x95, 0xd0, 0xbf, 0x4d, 0x7e, 0x0a, 0x58, 0x63,
 	0xf9, 0x99, 0xe1, 0x6a, 0x49, 0x84, 0x1d, 0xfe, 0x5b, 0x09, 0xf6, 0x54, 0x98, 0x47, 0x63, 0xce,
 	0x92, 0x46, 0xcc, 0x5e, 0x06, 0xc9, 0x5e, 0x52, 0x80, 0xe7, 0x39, 0xe0, 0x1f, 0xba, 0xc9, 0xb5,
@@ -2194,7 +2194,7 @@ var fileDescriptor_80f86ad761877d5c = []byte{
 	0xf6, 0xb3, 0x85, 0x87, 0x74, 0x36, 0xb2, 0x47, 0x71, 0x43, 0x78, 0x4f, 0x52, 0x07, 0xef, 0xc1,
 	0xc6, 0x51, 0x5b, 0xd0, 0x8c, 0x94, 0x85, 0xa9, 0x33, 0x75, 0xee, 0x1c, 0x6c, 0x9c, 0x34, 0x05,
 	0xce, 0x94, 0x85, 0x78, 0xe7, 0xaa, 0x26, 0xfe, 0x6c, 0x70, 0xf8, 0xdf, 0x00, 0x00, 0x00, 0xff,
-	0xff, 0x58, 0x69, 0x82, 0x7a, 0x52, 0x18, 0x00, 0x00,
+	0xff, 0x92, 0x62, 0x2d, 0x99, 0x52, 0x18, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.

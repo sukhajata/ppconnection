@@ -6166,7 +6166,7 @@ proto.ppconnection.InstMsgRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setStarttime(value);
       break;
     case 2:
@@ -6204,7 +6204,7 @@ proto.ppconnection.InstMsgRequest.serializeBinaryToWriter = function(message, wr
   var f = undefined;
   f = message.getStarttime();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       1,
       f
     );
@@ -6220,7 +6220,7 @@ proto.ppconnection.InstMsgRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional int32 startTime = 1;
+ * optional int64 startTime = 1;
  * @return {number}
  */
 proto.ppconnection.InstMsgRequest.prototype.getStarttime = function() {
@@ -6490,7 +6490,7 @@ proto.ppconnection.InstMsgDatum.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
     case 2:
@@ -6544,7 +6544,7 @@ proto.ppconnection.InstMsgDatum.serializeBinaryToWriter = function(message, writ
   var f = undefined;
   f = message.getTimestamp();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       1,
       f
     );
@@ -6588,7 +6588,7 @@ proto.ppconnection.InstMsgDatum.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional int32 timestamp = 1;
+ * optional int64 timestamp = 1;
  * @return {number}
  */
 proto.ppconnection.InstMsgDatum.prototype.getTimestamp = function() {
@@ -6766,7 +6766,7 @@ proto.ppconnection.ProcMsgRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setStarttime(value);
       break;
     case 2:
@@ -6804,7 +6804,7 @@ proto.ppconnection.ProcMsgRequest.serializeBinaryToWriter = function(message, wr
   var f = undefined;
   f = message.getStarttime();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       1,
       f
     );
@@ -6820,7 +6820,7 @@ proto.ppconnection.ProcMsgRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional int32 startTime = 1;
+ * optional int64 startTime = 1;
  * @return {number}
  */
 proto.ppconnection.ProcMsgRequest.prototype.getStarttime = function() {
@@ -7095,7 +7095,7 @@ proto.ppconnection.ProcMsgDatum.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
     case 2:
@@ -7169,7 +7169,7 @@ proto.ppconnection.ProcMsgDatum.serializeBinaryToWriter = function(message, writ
   var f = undefined;
   f = message.getTimestamp();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       1,
       f
     );
@@ -7248,7 +7248,7 @@ proto.ppconnection.ProcMsgDatum.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional int32 timestamp = 1;
+ * optional int64 timestamp = 1;
  * @return {number}
  */
 proto.ppconnection.ProcMsgDatum.prototype.getTimestamp = function() {
