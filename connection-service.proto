@@ -199,6 +199,47 @@ message Empty {
 
 }
 
+message InstMsgRequest {
+    int32 startTime = 1;
+    string deviceEUI = 2;
+}
+
+message InstMsgData {
+    repeated InstMsgDatum rows = 1;
+}
+
+message InstMsgDatum {
+    int32 timestamp = 1;
+    int32 phase = 2;
+    float activepower = 3;
+    float reactivepower = 4;
+    float current = 5;
+    float voltage = 6;
+}
+
+message ProcMsgRequest {
+    int32 startTime = 1;
+    string deviceEUI = 2;
+}
+
+message ProcMsgData {
+    repeated ProcMsgDatum rows = 1;
+}
+
+message ProcMsgDatum {
+    int32 timestamp = 1;
+    int32 phase = 2;
+	float loopimpedance = 3;
+	int32 rssi = 4;
+	int32 snr = 5;
+    int32 alivecnt = 6;
+    int32 saifi = 7;
+    int32 memfree = 8;
+    int32 tempcnt = 9;
+    int32 sustainedcnt = 10;
+    int32 prolongedcnt = 11;
+}
+
 service ConnectionService {
 
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
@@ -230,5 +271,9 @@ service ConnectionService {
     rpc Geocode(Address) returns (LatLng) {}
 
     rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
+
+    rpc GetInstMsgData(InstMsgRequest) returns (InstMsgData) {}
+
+    rpc GetProcMsgData(ProcMsgRequest) returns (ProcMsgData) {}
 
 }
