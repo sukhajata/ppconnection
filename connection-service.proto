@@ -229,7 +229,7 @@ message ProcMsgData {
 message ProcMsgDatum {
     int64 timestamp = 1;
     int32 phase = 2;
-	float loopimpedance = 3;
+	int32 loopimpedance = 3;
 	int32 rssi = 4;
 	int32 snr = 5;
     int32 alivecnt = 6;
