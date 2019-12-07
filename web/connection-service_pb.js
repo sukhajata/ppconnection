@@ -7049,7 +7049,7 @@ proto.ppconnection.ProcMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
     timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
     phase: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    loopimpedance: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    loopimpedance: jspb.Message.getFieldWithDefault(msg, 3, 0),
     rssi: jspb.Message.getFieldWithDefault(msg, 4, 0),
     snr: jspb.Message.getFieldWithDefault(msg, 5, 0),
     alivecnt: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -7103,7 +7103,7 @@ proto.ppconnection.ProcMsgDatum.deserializeBinaryFromReader = function(msg, read
       msg.setPhase(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setLoopimpedance(value);
       break;
     case 4:
@@ -7182,8 +7182,8 @@ proto.ppconnection.ProcMsgDatum.serializeBinaryToWriter = function(message, writ
     );
   }
   f = message.getLoopimpedance();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       3,
       f
     );
@@ -7284,11 +7284,11 @@ proto.ppconnection.ProcMsgDatum.prototype.setPhase = function(value) {
 
 
 /**
- * optional float loopimpedance = 3;
+ * optional int32 loopimpedance = 3;
  * @return {number}
  */
 proto.ppconnection.ProcMsgDatum.prototype.getLoopimpedance = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -7297,7 +7297,7 @@ proto.ppconnection.ProcMsgDatum.prototype.getLoopimpedance = function() {
  * @return {!proto.ppconnection.ProcMsgDatum} returns this
  */
 proto.ppconnection.ProcMsgDatum.prototype.setLoopimpedance = function(value) {
-  return jspb.Message.setProto3FloatField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
