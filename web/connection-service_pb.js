@@ -4726,7 +4726,7 @@ proto.ppconnection.UpdateConnectionStateRequest.prototype.toObject = function(op
 proto.ppconnection.UpdateConnectionStateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    connectionstate: jspb.Message.getFieldWithDefault(msg, 2, "")
+    connectionstate: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -4768,7 +4768,7 @@ proto.ppconnection.UpdateConnectionStateRequest.deserializeBinaryFromReader = fu
       msg.setIdentifier(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {!proto.ppconnection.Connection.ConnectionState} */ (reader.readEnum());
       msg.setConnectionstate(value);
       break;
     default:
@@ -4808,8 +4808,8 @@ proto.ppconnection.UpdateConnectionStateRequest.serializeBinaryToWriter = functi
     );
   }
   f = message.getConnectionstate();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0.0) {
+    writer.writeEnum(
       2,
       f
     );
@@ -4836,20 +4836,20 @@ proto.ppconnection.UpdateConnectionStateRequest.prototype.setIdentifier = functi
 
 
 /**
- * optional string connectionState = 2;
- * @return {string}
+ * optional Connection.ConnectionState connectionState = 2;
+ * @return {!proto.ppconnection.Connection.ConnectionState}
  */
 proto.ppconnection.UpdateConnectionStateRequest.prototype.getConnectionstate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!proto.ppconnection.Connection.ConnectionState} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.ppconnection.Connection.ConnectionState} value
  * @return {!proto.ppconnection.UpdateConnectionStateRequest} returns this
  */
 proto.ppconnection.UpdateConnectionStateRequest.prototype.setConnectionstate = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 

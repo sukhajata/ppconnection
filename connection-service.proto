@@ -157,7 +157,7 @@ message UpdateDeviceRequest {
 
 message UpdateConnectionStateRequest {
     string identifier = 1;
-    string connectionState = 2;
+    Connection.ConnectionState connectionState = 2;
 }
 
 message UpdateJobRequest {
