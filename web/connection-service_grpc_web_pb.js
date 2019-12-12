@@ -1269,16 +1269,16 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getDeviceBySerialNum
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.InstMsgRequest,
+ *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.InstMsgData>}
  */
 const methodDescriptor_ConnectionService_GetInstMsgData = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/GetInstMsgData',
   grpc.web.MethodType.UNARY,
-  proto.ppconnection.InstMsgRequest,
+  proto.ppconnection.DataMsgRequest,
   proto.ppconnection.InstMsgData,
   /**
-   * @param {!proto.ppconnection.InstMsgRequest} request
+   * @param {!proto.ppconnection.DataMsgRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1291,13 +1291,13 @@ const methodDescriptor_ConnectionService_GetInstMsgData = new grpc.web.MethodDes
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.InstMsgRequest,
+ *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.InstMsgData>}
  */
 const methodInfo_ConnectionService_GetInstMsgData = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.InstMsgData,
   /**
-   * @param {!proto.ppconnection.InstMsgRequest} request
+   * @param {!proto.ppconnection.DataMsgRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1308,7 +1308,7 @@ const methodInfo_ConnectionService_GetInstMsgData = new grpc.web.AbstractClientB
 
 
 /**
- * @param {!proto.ppconnection.InstMsgRequest} request The
+ * @param {!proto.ppconnection.DataMsgRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1329,7 +1329,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.getInstMsgData =
 
 
 /**
- * @param {!proto.ppconnection.InstMsgRequest} request The
+ * @param {!proto.ppconnection.DataMsgRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1349,16 +1349,16 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getInstMsgData =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.ProcMsgRequest,
+ *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.ProcMsgData>}
  */
 const methodDescriptor_ConnectionService_GetProcMsgData = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/GetProcMsgData',
   grpc.web.MethodType.UNARY,
-  proto.ppconnection.ProcMsgRequest,
+  proto.ppconnection.DataMsgRequest,
   proto.ppconnection.ProcMsgData,
   /**
-   * @param {!proto.ppconnection.ProcMsgRequest} request
+   * @param {!proto.ppconnection.DataMsgRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1371,13 +1371,13 @@ const methodDescriptor_ConnectionService_GetProcMsgData = new grpc.web.MethodDes
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.ProcMsgRequest,
+ *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.ProcMsgData>}
  */
 const methodInfo_ConnectionService_GetProcMsgData = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.ProcMsgData,
   /**
-   * @param {!proto.ppconnection.ProcMsgRequest} request
+   * @param {!proto.ppconnection.DataMsgRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1388,7 +1388,7 @@ const methodInfo_ConnectionService_GetProcMsgData = new grpc.web.AbstractClientB
 
 
 /**
- * @param {!proto.ppconnection.ProcMsgRequest} request The
+ * @param {!proto.ppconnection.DataMsgRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1409,7 +1409,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.getProcMsgData =
 
 
 /**
- * @param {!proto.ppconnection.ProcMsgRequest} request The
+ * @param {!proto.ppconnection.DataMsgRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1423,6 +1423,166 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getProcMsgData =
       request,
       metadata || {},
       methodDescriptor_ConnectionService_GetProcMsgData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.DataMsgRequest,
+ *   !proto.ppconnection.PQMsgData>}
+ */
+const methodDescriptor_ConnectionService_GetPQMsg = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetPQMsg',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.DataMsgRequest,
+  proto.ppconnection.PQMsgData,
+  /**
+   * @param {!proto.ppconnection.DataMsgRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.PQMsgData.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.DataMsgRequest,
+ *   !proto.ppconnection.PQMsgData>}
+ */
+const methodInfo_ConnectionService_GetPQMsg = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.PQMsgData,
+  /**
+   * @param {!proto.ppconnection.DataMsgRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.PQMsgData.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.DataMsgRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.PQMsgData)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.PQMsgData>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getPQMsg =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetPQMsg',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetPQMsg,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.DataMsgRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.PQMsgData>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getPQMsg =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetPQMsg',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetPQMsg);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.DataMsgRequest,
+ *   !proto.ppconnection.GeoscanMsgData>}
+ */
+const methodDescriptor_ConnectionService_GetGeoscanMsg = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetGeoscanMsg',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.DataMsgRequest,
+  proto.ppconnection.GeoscanMsgData,
+  /**
+   * @param {!proto.ppconnection.DataMsgRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.GeoscanMsgData.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.DataMsgRequest,
+ *   !proto.ppconnection.GeoscanMsgData>}
+ */
+const methodInfo_ConnectionService_GetGeoscanMsg = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.GeoscanMsgData,
+  /**
+   * @param {!proto.ppconnection.DataMsgRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.GeoscanMsgData.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.DataMsgRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.GeoscanMsgData)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.GeoscanMsgData>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getGeoscanMsg =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetGeoscanMsg',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetGeoscanMsg,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.DataMsgRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.GeoscanMsgData>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getGeoscanMsg =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetGeoscanMsg',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetGeoscanMsg);
 };
 
 

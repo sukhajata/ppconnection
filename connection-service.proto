@@ -199,7 +199,7 @@ message Empty {
 
 }
 
-message InstMsgRequest {
+message DataMsgRequest {
     int64 startTime = 1;
     string deviceEUI = 2;
 }
@@ -215,11 +215,6 @@ message InstMsgDatum {
     float reactivepower = 4;
     float current = 5;
     float voltage = 6;
-}
-
-message ProcMsgRequest {
-    int64 startTime = 1;
-    string deviceEUI = 2;
 }
 
 message ProcMsgData {
@@ -238,6 +233,49 @@ message ProcMsgDatum {
     int32 tempcnt = 9;
     int32 sustainedcnt = 10;
     int32 prolongedcnt = 11;
+}
+
+message PQMsgData {
+    repeated PQMsgDatum rows = 1;
+}
+
+message PQMsgDatum {
+    int64 timestamp = 1;
+    int32 phase = 2;
+    float voltageMax = 3;
+    float currentMax = 4;
+    float powerActiveMax = 5;
+    float powerReactiveMax = 6;
+    float thdvMax = 7;
+    float voltageSMA = 8;
+    float currentSMA = 9;
+    float powerActiveSMA = 10;
+    float powerReactiveSMA = 11;
+    float thdvSMA = 12;
+    float voltageMin = 13;
+    float currentMin = 14;
+    float powerActiveMin = 15;
+    float powerReactiveMin = 16;
+    float thdvMin = 17;
+    float momentarySag = 18;
+    float momentarySwell = 19;
+    float temporarySag = 20;
+    float temporarySwell = 21;
+    float sustainedUnderVoltage = 22;
+    float sustainedOverVoltage = 23;
+    float prolongedUnderVoltage = 24;
+    float prolongedOverVoltage = 25;
+}
+
+message GeoscanMsgData {
+    repeated GeoscanMsgDatum rows = 1;
+}
+
+message GeoscanMsgDatum {
+    int64 timestamp = 1;
+    int32 phase = 2;
+    string rssid = 3;
+    string bssid = 4;
 }
 
 service ConnectionService {
@@ -272,8 +310,12 @@ service ConnectionService {
 
     rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
 
-    rpc GetInstMsgData(InstMsgRequest) returns (InstMsgData) {}
+    rpc GetInstMsgData(DataMsgRequest) returns (InstMsgData) {}
 
-    rpc GetProcMsgData(ProcMsgRequest) returns (ProcMsgData) {}
+    rpc GetProcMsgData(DataMsgRequest) returns (ProcMsgData) {}
+
+    rpc GetPQMsg(DataMsgRequest) returns (PQMsgData) {}
+
+    rpc GetGeoscanMsg(DataMsgRequest) returns (GeoscanMsgData) {}
 
 }
