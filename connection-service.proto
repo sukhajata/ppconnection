@@ -313,8 +313,8 @@ service ConnectionService {
 
     rpc GetProcMsgData(DataMsgRequest) returns (ProcMsgData) {}
 
-    rpc GetPQMsg(DataMsgRequest) returns (PQMsgData) {}
+    rpc GetPQMsgData(DataMsgRequest) returns (PQMsgData) {}
 
-    rpc GetGeoscanMsg(DataMsgRequest) returns (GeoscanMsgData) {}
+    rpc GetGeoscanMsgData(DataMsgRequest) returns (GeoscanMsgData) {}
 
 }
