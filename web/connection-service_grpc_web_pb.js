@@ -1432,8 +1432,8 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getProcMsgData =
  *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.PQMsgData>}
  */
-const methodDescriptor_ConnectionService_GetPQMsg = new grpc.web.MethodDescriptor(
-  '/ppconnection.ConnectionService/GetPQMsg',
+const methodDescriptor_ConnectionService_GetPQMsgData = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetPQMsgData',
   grpc.web.MethodType.UNARY,
   proto.ppconnection.DataMsgRequest,
   proto.ppconnection.PQMsgData,
@@ -1454,7 +1454,7 @@ const methodDescriptor_ConnectionService_GetPQMsg = new grpc.web.MethodDescripto
  *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.PQMsgData>}
  */
-const methodInfo_ConnectionService_GetPQMsg = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ConnectionService_GetPQMsgData = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.PQMsgData,
   /**
    * @param {!proto.ppconnection.DataMsgRequest} request
@@ -1477,13 +1477,13 @@ const methodInfo_ConnectionService_GetPQMsg = new grpc.web.AbstractClientBase.Me
  * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.PQMsgData>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ppconnection.ConnectionServiceClient.prototype.getPQMsg =
+proto.ppconnection.ConnectionServiceClient.prototype.getPQMsgData =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ppconnection.ConnectionService/GetPQMsg',
+      '/ppconnection.ConnectionService/GetPQMsgData',
       request,
       metadata || {},
-      methodDescriptor_ConnectionService_GetPQMsg,
+      methodDescriptor_ConnectionService_GetPQMsgData,
       callback);
 };
 
@@ -1496,13 +1496,13 @@ proto.ppconnection.ConnectionServiceClient.prototype.getPQMsg =
  * @return {!Promise<!proto.ppconnection.PQMsgData>}
  *     A native promise that resolves to the response
  */
-proto.ppconnection.ConnectionServicePromiseClient.prototype.getPQMsg =
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getPQMsgData =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ppconnection.ConnectionService/GetPQMsg',
+      '/ppconnection.ConnectionService/GetPQMsgData',
       request,
       metadata || {},
-      methodDescriptor_ConnectionService_GetPQMsg);
+      methodDescriptor_ConnectionService_GetPQMsgData);
 };
 
 
@@ -1512,8 +1512,8 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getPQMsg =
  *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.GeoscanMsgData>}
  */
-const methodDescriptor_ConnectionService_GetGeoscanMsg = new grpc.web.MethodDescriptor(
-  '/ppconnection.ConnectionService/GetGeoscanMsg',
+const methodDescriptor_ConnectionService_GetGeoscanMsgData = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetGeoscanMsgData',
   grpc.web.MethodType.UNARY,
   proto.ppconnection.DataMsgRequest,
   proto.ppconnection.GeoscanMsgData,
@@ -1534,7 +1534,7 @@ const methodDescriptor_ConnectionService_GetGeoscanMsg = new grpc.web.MethodDesc
  *   !proto.ppconnection.DataMsgRequest,
  *   !proto.ppconnection.GeoscanMsgData>}
  */
-const methodInfo_ConnectionService_GetGeoscanMsg = new grpc.web.AbstractClientBase.MethodInfo(
+const methodInfo_ConnectionService_GetGeoscanMsgData = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.GeoscanMsgData,
   /**
    * @param {!proto.ppconnection.DataMsgRequest} request
@@ -1557,13 +1557,13 @@ const methodInfo_ConnectionService_GetGeoscanMsg = new grpc.web.AbstractClientBa
  * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.GeoscanMsgData>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ppconnection.ConnectionServiceClient.prototype.getGeoscanMsg =
+proto.ppconnection.ConnectionServiceClient.prototype.getGeoscanMsgData =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/ppconnection.ConnectionService/GetGeoscanMsg',
+      '/ppconnection.ConnectionService/GetGeoscanMsgData',
       request,
       metadata || {},
-      methodDescriptor_ConnectionService_GetGeoscanMsg,
+      methodDescriptor_ConnectionService_GetGeoscanMsgData,
       callback);
 };
 
@@ -1576,13 +1576,13 @@ proto.ppconnection.ConnectionServiceClient.prototype.getGeoscanMsg =
  * @return {!Promise<!proto.ppconnection.GeoscanMsgData>}
  *     A native promise that resolves to the response
  */
-proto.ppconnection.ConnectionServicePromiseClient.prototype.getGeoscanMsg =
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getGeoscanMsgData =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/ppconnection.ConnectionService/GetGeoscanMsg',
+      '/ppconnection.ConnectionService/GetGeoscanMsgData',
       request,
       metadata || {},
-      methodDescriptor_ConnectionService_GetGeoscanMsg);
+      methodDescriptor_ConnectionService_GetGeoscanMsgData);
 };
 
 
