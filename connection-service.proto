@@ -273,9 +273,8 @@ message GeoscanMsgData {
 
 message GeoscanMsgDatum {
     int64 timestamp = 1;
-    int32 phase = 2;
-    string rssid = 3;
-    string bssid = 4;
+    string rssid = 2;
+    string bssid = 3;
 }
 
 service ConnectionService {

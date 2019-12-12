@@ -8554,9 +8554,8 @@ proto.ppconnection.GeoscanMsgDatum.prototype.toObject = function(opt_includeInst
 proto.ppconnection.GeoscanMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
     timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    phase: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    rssid: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    bssid: jspb.Message.getFieldWithDefault(msg, 4, "")
+    rssid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    bssid: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -8598,14 +8597,10 @@ proto.ppconnection.GeoscanMsgDatum.deserializeBinaryFromReader = function(msg, r
       msg.setTimestamp(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPhase(value);
-      break;
-    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setRssid(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setBssid(value);
       break;
@@ -8645,24 +8640,17 @@ proto.ppconnection.GeoscanMsgDatum.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getPhase();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
   f = message.getRssid();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getBssid();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -8688,29 +8676,11 @@ proto.ppconnection.GeoscanMsgDatum.prototype.setTimestamp = function(value) {
 
 
 /**
- * optional int32 phase = 2;
- * @return {number}
- */
-proto.ppconnection.GeoscanMsgDatum.prototype.getPhase = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.ppconnection.GeoscanMsgDatum} returns this
- */
-proto.ppconnection.GeoscanMsgDatum.prototype.setPhase = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional string rssid = 3;
+ * optional string rssid = 2;
  * @return {string}
  */
 proto.ppconnection.GeoscanMsgDatum.prototype.getRssid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -8719,16 +8689,16 @@ proto.ppconnection.GeoscanMsgDatum.prototype.getRssid = function() {
  * @return {!proto.ppconnection.GeoscanMsgDatum} returns this
  */
 proto.ppconnection.GeoscanMsgDatum.prototype.setRssid = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string bssid = 4;
+ * optional string bssid = 3;
  * @return {string}
  */
 proto.ppconnection.GeoscanMsgDatum.prototype.getBssid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -8737,7 +8707,7 @@ proto.ppconnection.GeoscanMsgDatum.prototype.getBssid = function() {
  * @return {!proto.ppconnection.GeoscanMsgDatum} returns this
  */
 proto.ppconnection.GeoscanMsgDatum.prototype.setBssid = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
