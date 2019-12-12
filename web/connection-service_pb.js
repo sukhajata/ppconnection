@@ -7560,14 +7560,14 @@ proto.ppconnection.PQMsgDatum.toObject = function(includeInstance, msg) {
     poweractivemin: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
     powerreactivemin: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0),
     thdvmin: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0),
-    momentarysag: jspb.Message.getFloatingPointFieldWithDefault(msg, 18, 0.0),
-    momentaryswell: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0),
-    temporarysag: jspb.Message.getFloatingPointFieldWithDefault(msg, 20, 0.0),
-    temporaryswell: jspb.Message.getFloatingPointFieldWithDefault(msg, 21, 0.0),
-    sustainedundervoltage: jspb.Message.getFloatingPointFieldWithDefault(msg, 22, 0.0),
-    sustainedovervoltage: jspb.Message.getFloatingPointFieldWithDefault(msg, 23, 0.0),
-    prolongedundervoltage: jspb.Message.getFloatingPointFieldWithDefault(msg, 24, 0.0),
-    prolongedovervoltage: jspb.Message.getFloatingPointFieldWithDefault(msg, 25, 0.0)
+    momentarysag: jspb.Message.getFieldWithDefault(msg, 18, 0),
+    momentaryswell: jspb.Message.getFieldWithDefault(msg, 19, 0),
+    temporarysag: jspb.Message.getFieldWithDefault(msg, 20, 0),
+    temporaryswell: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    sustainedundervoltage: jspb.Message.getFieldWithDefault(msg, 22, 0),
+    sustainedovervoltage: jspb.Message.getFieldWithDefault(msg, 23, 0),
+    prolongedundervoltage: jspb.Message.getFieldWithDefault(msg, 24, 0),
+    prolongedovervoltage: jspb.Message.getFieldWithDefault(msg, 25, 0)
   };
 
   if (includeInstance) {
@@ -7673,35 +7673,35 @@ proto.ppconnection.PQMsgDatum.deserializeBinaryFromReader = function(msg, reader
       msg.setThdvmin(value);
       break;
     case 18:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setMomentarysag(value);
       break;
     case 19:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setMomentaryswell(value);
       break;
     case 20:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setTemporarysag(value);
       break;
     case 21:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setTemporaryswell(value);
       break;
     case 22:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setSustainedundervoltage(value);
       break;
     case 23:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setSustainedovervoltage(value);
       break;
     case 24:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setProlongedundervoltage(value);
       break;
     case 25:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setProlongedovervoltage(value);
       break;
     default:
@@ -7853,57 +7853,57 @@ proto.ppconnection.PQMsgDatum.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getMomentarysag();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       18,
       f
     );
   }
   f = message.getMomentaryswell();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       19,
       f
     );
   }
   f = message.getTemporarysag();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       20,
       f
     );
   }
   f = message.getTemporaryswell();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       21,
       f
     );
   }
   f = message.getSustainedundervoltage();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       22,
       f
     );
   }
   f = message.getSustainedovervoltage();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       23,
       f
     );
   }
   f = message.getProlongedundervoltage();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       24,
       f
     );
   }
   f = message.getProlongedovervoltage();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt32(
       25,
       f
     );
@@ -8218,11 +8218,11 @@ proto.ppconnection.PQMsgDatum.prototype.setThdvmin = function(value) {
 
 
 /**
- * optional float momentarySag = 18;
+ * optional int32 momentarySag = 18;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getMomentarysag = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 18, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
 };
 
 
@@ -8231,16 +8231,16 @@ proto.ppconnection.PQMsgDatum.prototype.getMomentarysag = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setMomentarysag = function(value) {
-  return jspb.Message.setProto3FloatField(this, 18, value);
+  return jspb.Message.setProto3IntField(this, 18, value);
 };
 
 
 /**
- * optional float momentarySwell = 19;
+ * optional int32 momentarySwell = 19;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getMomentaryswell = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
 
@@ -8249,16 +8249,16 @@ proto.ppconnection.PQMsgDatum.prototype.getMomentaryswell = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setMomentaryswell = function(value) {
-  return jspb.Message.setProto3FloatField(this, 19, value);
+  return jspb.Message.setProto3IntField(this, 19, value);
 };
 
 
 /**
- * optional float temporarySag = 20;
+ * optional int32 temporarySag = 20;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getTemporarysag = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 20, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
 
@@ -8267,16 +8267,16 @@ proto.ppconnection.PQMsgDatum.prototype.getTemporarysag = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setTemporarysag = function(value) {
-  return jspb.Message.setProto3FloatField(this, 20, value);
+  return jspb.Message.setProto3IntField(this, 20, value);
 };
 
 
 /**
- * optional float temporarySwell = 21;
+ * optional int32 temporarySwell = 21;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getTemporaryswell = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 21, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
 };
 
 
@@ -8285,16 +8285,16 @@ proto.ppconnection.PQMsgDatum.prototype.getTemporaryswell = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setTemporaryswell = function(value) {
-  return jspb.Message.setProto3FloatField(this, 21, value);
+  return jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
 /**
- * optional float sustainedUnderVoltage = 22;
+ * optional int32 sustainedUnderVoltage = 22;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getSustainedundervoltage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 22, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
 };
 
 
@@ -8303,16 +8303,16 @@ proto.ppconnection.PQMsgDatum.prototype.getSustainedundervoltage = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setSustainedundervoltage = function(value) {
-  return jspb.Message.setProto3FloatField(this, 22, value);
+  return jspb.Message.setProto3IntField(this, 22, value);
 };
 
 
 /**
- * optional float sustainedOverVoltage = 23;
+ * optional int32 sustainedOverVoltage = 23;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getSustainedovervoltage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 23, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
 };
 
 
@@ -8321,16 +8321,16 @@ proto.ppconnection.PQMsgDatum.prototype.getSustainedovervoltage = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setSustainedovervoltage = function(value) {
-  return jspb.Message.setProto3FloatField(this, 23, value);
+  return jspb.Message.setProto3IntField(this, 23, value);
 };
 
 
 /**
- * optional float prolongedUnderVoltage = 24;
+ * optional int32 prolongedUnderVoltage = 24;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getProlongedundervoltage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 24, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
 };
 
 
@@ -8339,16 +8339,16 @@ proto.ppconnection.PQMsgDatum.prototype.getProlongedundervoltage = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setProlongedundervoltage = function(value) {
-  return jspb.Message.setProto3FloatField(this, 24, value);
+  return jspb.Message.setProto3IntField(this, 24, value);
 };
 
 
 /**
- * optional float prolongedOverVoltage = 25;
+ * optional int32 prolongedOverVoltage = 25;
  * @return {number}
  */
 proto.ppconnection.PQMsgDatum.prototype.getProlongedovervoltage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 25, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 25, 0));
 };
 
 
@@ -8357,7 +8357,7 @@ proto.ppconnection.PQMsgDatum.prototype.getProlongedovervoltage = function() {
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setProlongedovervoltage = function(value) {
-  return jspb.Message.setProto3FloatField(this, 25, value);
+  return jspb.Message.setProto3IntField(this, 25, value);
 };
 
 
