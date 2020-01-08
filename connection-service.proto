@@ -200,7 +200,7 @@ message Empty {
 }
 
 message DataMsgRequest {
-    int64 startTime = 1;
+    string startTime = 1;
     string deviceEUI = 2;
 }
 

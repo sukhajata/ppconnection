@@ -6193,7 +6193,7 @@ proto.ppconnection.DataMsgRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.ppconnection.DataMsgRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    starttime: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    starttime: jspb.Message.getFieldWithDefault(msg, 1, ""),
     deviceeui: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -6232,7 +6232,7 @@ proto.ppconnection.DataMsgRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setStarttime(value);
       break;
     case 2:
@@ -6269,8 +6269,8 @@ proto.ppconnection.DataMsgRequest.prototype.serializeBinary = function() {
 proto.ppconnection.DataMsgRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getStarttime();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -6286,20 +6286,20 @@ proto.ppconnection.DataMsgRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional int64 startTime = 1;
- * @return {number}
+ * optional string startTime = 1;
+ * @return {string}
  */
 proto.ppconnection.DataMsgRequest.prototype.getStarttime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ppconnection.DataMsgRequest} returns this
  */
 proto.ppconnection.DataMsgRequest.prototype.setStarttime = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
