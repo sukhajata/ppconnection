@@ -6513,7 +6513,7 @@ proto.ppconnection.InstMsgDatum.prototype.toObject = function(opt_includeInstanc
  */
 proto.ppconnection.InstMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     phase: jspb.Message.getFieldWithDefault(msg, 2, 0),
     activepower: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     reactivepower: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
@@ -6556,7 +6556,7 @@ proto.ppconnection.InstMsgDatum.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
       break;
     case 2:
@@ -6609,8 +6609,8 @@ proto.ppconnection.InstMsgDatum.prototype.serializeBinary = function() {
 proto.ppconnection.InstMsgDatum.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimestamp();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -6654,20 +6654,20 @@ proto.ppconnection.InstMsgDatum.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional int64 timestamp = 1;
- * @return {number}
+ * optional string timestamp = 1;
+ * @return {string}
  */
 proto.ppconnection.InstMsgDatum.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ppconnection.InstMsgDatum} returns this
  */
 proto.ppconnection.InstMsgDatum.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -6953,7 +6953,7 @@ proto.ppconnection.ProcMsgDatum.prototype.toObject = function(opt_includeInstanc
  */
 proto.ppconnection.ProcMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     phase: jspb.Message.getFieldWithDefault(msg, 2, 0),
     loopimpedance: jspb.Message.getFieldWithDefault(msg, 3, 0),
     rssi: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -7001,7 +7001,7 @@ proto.ppconnection.ProcMsgDatum.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
       break;
     case 2:
@@ -7074,8 +7074,8 @@ proto.ppconnection.ProcMsgDatum.prototype.serializeBinary = function() {
 proto.ppconnection.ProcMsgDatum.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimestamp();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -7154,20 +7154,20 @@ proto.ppconnection.ProcMsgDatum.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional int64 timestamp = 1;
- * @return {number}
+ * optional string timestamp = 1;
+ * @return {string}
  */
 proto.ppconnection.ProcMsgDatum.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ppconnection.ProcMsgDatum} returns this
  */
 proto.ppconnection.ProcMsgDatum.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7543,7 +7543,7 @@ proto.ppconnection.PQMsgDatum.prototype.toObject = function(opt_includeInstance)
  */
 proto.ppconnection.PQMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     phase: jspb.Message.getFieldWithDefault(msg, 2, 0),
     voltagemax: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     currentmax: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
@@ -7605,7 +7605,7 @@ proto.ppconnection.PQMsgDatum.deserializeBinaryFromReader = function(msg, reader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
       break;
     case 2:
@@ -7734,8 +7734,8 @@ proto.ppconnection.PQMsgDatum.prototype.serializeBinary = function() {
 proto.ppconnection.PQMsgDatum.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimestamp();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -7912,20 +7912,20 @@ proto.ppconnection.PQMsgDatum.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional int64 timestamp = 1;
- * @return {number}
+ * optional string timestamp = 1;
+ * @return {string}
  */
 proto.ppconnection.PQMsgDatum.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ppconnection.PQMsgDatum} returns this
  */
 proto.ppconnection.PQMsgDatum.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8553,7 +8553,7 @@ proto.ppconnection.GeoscanMsgDatum.prototype.toObject = function(opt_includeInst
  */
 proto.ppconnection.GeoscanMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 1, ""),
     rssid: jspb.Message.getFieldWithDefault(msg, 2, ""),
     bssid: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -8593,7 +8593,7 @@ proto.ppconnection.GeoscanMsgDatum.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setTimestamp(value);
       break;
     case 2:
@@ -8634,8 +8634,8 @@ proto.ppconnection.GeoscanMsgDatum.prototype.serializeBinary = function() {
 proto.ppconnection.GeoscanMsgDatum.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimestamp();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
@@ -8658,20 +8658,20 @@ proto.ppconnection.GeoscanMsgDatum.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional int64 timestamp = 1;
- * @return {number}
+ * optional string timestamp = 1;
+ * @return {string}
  */
 proto.ppconnection.GeoscanMsgDatum.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.ppconnection.GeoscanMsgDatum} returns this
  */
 proto.ppconnection.GeoscanMsgDatum.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
