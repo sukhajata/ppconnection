@@ -209,7 +209,7 @@ message InstMsgData {
 }
 
 message InstMsgDatum {
-    int64 timestamp = 1;
+    string timestamp = 1;
     int32 phase = 2;
     float activepower = 3;
     float reactivepower = 4;
@@ -222,7 +222,7 @@ message ProcMsgData {
 }
 
 message ProcMsgDatum {
-    int64 timestamp = 1;
+    string timestamp = 1;
     int32 phase = 2;
 	int32 loopimpedance = 3;
 	int32 rssi = 4;
@@ -240,7 +240,7 @@ message PQMsgData {
 }
 
 message PQMsgDatum {
-    int64 timestamp = 1;
+    string timestamp = 1;
     int32 phase = 2;
     float voltageMax = 3;
     float currentMax = 4;
@@ -272,7 +272,7 @@ message GeoscanMsgData {
 }
 
 message GeoscanMsgDatum {
-    int64 timestamp = 1;
+    string timestamp = 1;
     string rssid = 2;
     string bssid = 3;
 }
