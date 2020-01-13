@@ -283,7 +283,7 @@ message UplinkMsgData {
 
 message UplinkMsgDatum {
     string timestamp = 1;
-    int32 rssi = 2;
+    float rssi = 2;
     float snr = 3;
     int64 frequency = 4;
 }

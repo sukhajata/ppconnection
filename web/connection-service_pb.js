@@ -8948,7 +8948,7 @@ proto.ppconnection.UplinkMsgDatum.prototype.toObject = function(opt_includeInsta
 proto.ppconnection.UplinkMsgDatum.toObject = function(includeInstance, msg) {
   var f, obj = {
     timestamp: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rssi: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    rssi: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     snr: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     frequency: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
@@ -8992,7 +8992,7 @@ proto.ppconnection.UplinkMsgDatum.deserializeBinaryFromReader = function(msg, re
       msg.setTimestamp(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setRssi(value);
       break;
     case 3:
@@ -9040,8 +9040,8 @@ proto.ppconnection.UplinkMsgDatum.serializeBinaryToWriter = function(message, wr
     );
   }
   f = message.getRssi();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       2,
       f
     );
@@ -9082,11 +9082,11 @@ proto.ppconnection.UplinkMsgDatum.prototype.setTimestamp = function(value) {
 
 
 /**
- * optional int32 rssi = 2;
+ * optional float rssi = 2;
  * @return {number}
  */
 proto.ppconnection.UplinkMsgDatum.prototype.getRssi = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
@@ -9095,7 +9095,7 @@ proto.ppconnection.UplinkMsgDatum.prototype.getRssi = function() {
  * @return {!proto.ppconnection.UplinkMsgDatum} returns this
  */
 proto.ppconnection.UplinkMsgDatum.prototype.setRssi = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
