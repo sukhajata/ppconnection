@@ -1586,5 +1586,85 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getGeoscanMsgData =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.DataMsgRequest,
+ *   !proto.ppconnection.UplinkMsgData>}
+ */
+const methodDescriptor_ConnectionService_GetUplinkMsgData = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetUplinkMsgData',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.DataMsgRequest,
+  proto.ppconnection.UplinkMsgData,
+  /**
+   * @param {!proto.ppconnection.DataMsgRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.UplinkMsgData.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.DataMsgRequest,
+ *   !proto.ppconnection.UplinkMsgData>}
+ */
+const methodInfo_ConnectionService_GetUplinkMsgData = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.UplinkMsgData,
+  /**
+   * @param {!proto.ppconnection.DataMsgRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.UplinkMsgData.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.DataMsgRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.UplinkMsgData)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.UplinkMsgData>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getUplinkMsgData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetUplinkMsgData',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetUplinkMsgData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.DataMsgRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.UplinkMsgData>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getUplinkMsgData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetUplinkMsgData',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetUplinkMsgData);
+};
+
+
 module.exports = proto.ppconnection;
 

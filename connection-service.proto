@@ -277,6 +277,17 @@ message GeoscanMsgDatum {
     string bssid = 3;
 }
 
+message UplinkMsgData {
+    repeated UplinkMsgDatum rows = 1;
+}
+
+message UplinkMsgDatum {
+    string timestamp = 1;
+    int32 rssi = 2;
+    float snr = 3;
+    int64 frequency = 4;
+}
+
 service ConnectionService {
 
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
@@ -316,5 +327,7 @@ service ConnectionService {
     rpc GetPQMsgData(DataMsgRequest) returns (PQMsgData) {}
 
     rpc GetGeoscanMsgData(DataMsgRequest) returns (GeoscanMsgData) {}
+
+    rpc GetUplinkMsgData(DataMsgRequest) returns (UplinkMsgData) {}
 
 }
