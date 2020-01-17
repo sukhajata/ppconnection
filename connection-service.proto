@@ -292,6 +292,8 @@ service ConnectionService {
 
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
 
+    rpc GetLiveConnections(GetConnectionsRequest) returns (Connections) {}
+
     rpc GetBlankConnection(Empty) returns (Connection) {}
 
     rpc GetConnection(Identifier) returns (Connection) {}

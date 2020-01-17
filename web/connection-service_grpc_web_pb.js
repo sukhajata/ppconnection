@@ -149,6 +149,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getConnections =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.GetConnectionsRequest,
+ *   !proto.ppconnection.Connections>}
+ */
+const methodDescriptor_ConnectionService_GetLiveConnections = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetLiveConnections',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.GetConnectionsRequest,
+  proto.ppconnection.Connections,
+  /**
+   * @param {!proto.ppconnection.GetConnectionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Connections.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.GetConnectionsRequest,
+ *   !proto.ppconnection.Connections>}
+ */
+const methodInfo_ConnectionService_GetLiveConnections = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Connections,
+  /**
+   * @param {!proto.ppconnection.GetConnectionsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Connections.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.GetConnectionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Connections)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Connections>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getLiveConnections =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetLiveConnections',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetLiveConnections,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.GetConnectionsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Connections>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getLiveConnections =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetLiveConnections',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetLiveConnections);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.Empty,
  *   !proto.ppconnection.Connection>}
  */
