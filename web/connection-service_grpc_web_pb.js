@@ -1746,5 +1746,85 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getUplinkMsgData =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.DataQueryRequest,
+ *   !proto.ppconnection.UplinkDayData>}
+ */
+const methodDescriptor_ConnectionService_GetUplinkDayData = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetUplinkDayData',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.DataQueryRequest,
+  proto.ppconnection.UplinkDayData,
+  /**
+   * @param {!proto.ppconnection.DataQueryRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.UplinkDayData.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.DataQueryRequest,
+ *   !proto.ppconnection.UplinkDayData>}
+ */
+const methodInfo_ConnectionService_GetUplinkDayData = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.UplinkDayData,
+  /**
+   * @param {!proto.ppconnection.DataQueryRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.UplinkDayData.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.DataQueryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.UplinkDayData)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.UplinkDayData>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getUplinkDayData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetUplinkDayData',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetUplinkDayData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.DataQueryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.UplinkDayData>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getUplinkDayData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetUplinkDayData',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetUplinkDayData);
+};
+
+
 module.exports = proto.ppconnection;
 

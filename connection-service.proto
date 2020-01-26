@@ -288,6 +288,27 @@ message UplinkMsgDatum {
     int64 frequency = 4;
 }
 
+message DataQueryRequest {
+    string where = 1;
+    string orderBy = 2;
+    bool desc = 3;
+    int32 limit = 4;
+}
+
+message UplinkDayData {
+    repeated UplinkDayDatum rows = 1;
+}
+
+message UplinkDayDatum {
+    string idNumber = 1;
+    string deviceEUI = 2;
+    string serialNumber = 3;
+    string day = 4;
+    int32 totalMessages = 5;
+    float avgRssi = 6;
+    float avgSnr = 7;
+}
+
 service ConnectionService {
 
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
@@ -331,5 +352,7 @@ service ConnectionService {
     rpc GetGeoscanMsgData(DataMsgRequest) returns (GeoscanMsgData) {}
 
     rpc GetUplinkMsgData(DataMsgRequest) returns (UplinkMsgData) {}
+
+    rpc GetUplinkDayData(DataQueryRequest) returns (UplinkDayData) {}
 
 }
