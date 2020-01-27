@@ -307,6 +307,10 @@ message UplinkDayDatum {
     int32 totalMessages = 5;
     float avgRssi = 6;
     float avgSnr = 7;
+    string streetAddress = 8;
+    string town = 9;
+    float latitude = 10;
+    float longitude = 11;
 }
 
 message OpAlarmData {

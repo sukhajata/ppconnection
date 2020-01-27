@@ -9663,7 +9663,11 @@ proto.ppconnection.UplinkDayDatum.toObject = function(includeInstance, msg) {
     day: jspb.Message.getFieldWithDefault(msg, 4, ""),
     totalmessages: jspb.Message.getFieldWithDefault(msg, 5, 0),
     avgrssi: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    avgsnr: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
+    avgsnr: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
+    streetaddress: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    town: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    latitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+    longitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0)
   };
 
   if (includeInstance) {
@@ -9727,6 +9731,22 @@ proto.ppconnection.UplinkDayDatum.deserializeBinaryFromReader = function(msg, re
     case 7:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setAvgsnr(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStreetaddress(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTown(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setLatitude(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setLongitude(value);
       break;
     default:
       reader.skipField();
@@ -9803,6 +9823,34 @@ proto.ppconnection.UplinkDayDatum.serializeBinaryToWriter = function(message, wr
   if (f !== 0.0) {
     writer.writeFloat(
       7,
+      f
+    );
+  }
+  f = message.getStreetaddress();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getTown();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getLatitude();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      10,
+      f
+    );
+  }
+  f = message.getLongitude();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      11,
       f
     );
   }
@@ -9932,6 +9980,78 @@ proto.ppconnection.UplinkDayDatum.prototype.getAvgsnr = function() {
  */
 proto.ppconnection.UplinkDayDatum.prototype.setAvgsnr = function(value) {
   return jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional string streetAddress = 8;
+ * @return {string}
+ */
+proto.ppconnection.UplinkDayDatum.prototype.getStreetaddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ppconnection.UplinkDayDatum} returns this
+ */
+proto.ppconnection.UplinkDayDatum.prototype.setStreetaddress = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string town = 9;
+ * @return {string}
+ */
+proto.ppconnection.UplinkDayDatum.prototype.getTown = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ppconnection.UplinkDayDatum} returns this
+ */
+proto.ppconnection.UplinkDayDatum.prototype.setTown = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional float latitude = 10;
+ * @return {number}
+ */
+proto.ppconnection.UplinkDayDatum.prototype.getLatitude = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ppconnection.UplinkDayDatum} returns this
+ */
+proto.ppconnection.UplinkDayDatum.prototype.setLatitude = function(value) {
+  return jspb.Message.setProto3FloatField(this, 10, value);
+};
+
+
+/**
+ * optional float longitude = 11;
+ * @return {number}
+ */
+proto.ppconnection.UplinkDayDatum.prototype.getLongitude = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ppconnection.UplinkDayDatum} returns this
+ */
+proto.ppconnection.UplinkDayDatum.prototype.setLongitude = function(value) {
+  return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
