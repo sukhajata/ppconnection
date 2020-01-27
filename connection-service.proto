@@ -309,6 +309,22 @@ message UplinkDayDatum {
     float avgSnr = 7;
 }
 
+message OpAlarmData {
+    repeated OpAlarmDatum rows = 1;
+}
+
+message OpAlarmDatum {
+    string timestamp = 1;
+    string idNumber = 2;
+    string deviceEUI = 3;
+    string serialNumber = 4;
+    string streetAddress = 5;
+    string town = 6;
+    float lat = 7;
+    float lng = 8;
+    string message = 9;
+}
+
 service ConnectionService {
 
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
@@ -354,5 +370,7 @@ service ConnectionService {
     rpc GetUplinkMsgData(DataMsgRequest) returns (UplinkMsgData) {}
 
     rpc GetUplinkDayData(DataQueryRequest) returns (UplinkDayData) {}
+
+    rpc GetOpAlarms(DataQueryRequest) returns (OpAlarmData) {}
 
 }

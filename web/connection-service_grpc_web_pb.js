@@ -1826,5 +1826,85 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getUplinkDayData =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.DataQueryRequest,
+ *   !proto.ppconnection.OpAlarmData>}
+ */
+const methodDescriptor_ConnectionService_GetOpAlarms = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetOpAlarms',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.DataQueryRequest,
+  proto.ppconnection.OpAlarmData,
+  /**
+   * @param {!proto.ppconnection.DataQueryRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.OpAlarmData.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.DataQueryRequest,
+ *   !proto.ppconnection.OpAlarmData>}
+ */
+const methodInfo_ConnectionService_GetOpAlarms = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.OpAlarmData,
+  /**
+   * @param {!proto.ppconnection.DataQueryRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.OpAlarmData.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.DataQueryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.OpAlarmData)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.OpAlarmData>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getOpAlarms =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetOpAlarms',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetOpAlarms,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.DataQueryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.OpAlarmData>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getOpAlarms =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetOpAlarms',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetOpAlarms);
+};
+
+
 module.exports = proto.ppconnection;
 
