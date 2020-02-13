@@ -469,6 +469,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getConnection =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Empty,
+ *   !proto.ppconnection.TransformerList>}
+ */
+const methodDescriptor_ConnectionService_GetTransformers = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetTransformers',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Empty,
+  proto.ppconnection.TransformerList,
+  /**
+   * @param {!proto.ppconnection.Empty} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.TransformerList.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Empty,
+ *   !proto.ppconnection.TransformerList>}
+ */
+const methodInfo_ConnectionService_GetTransformers = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.TransformerList,
+  /**
+   * @param {!proto.ppconnection.Empty} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.TransformerList.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Empty} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.TransformerList)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.TransformerList>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getTransformers =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetTransformers',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetTransformers,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Empty} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.TransformerList>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getTransformers =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetTransformers',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetTransformers);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.UpdateMountRequest,
  *   !proto.ppconnection.Response>}
  */

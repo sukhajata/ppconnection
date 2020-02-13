@@ -203,6 +203,14 @@ message Empty {
 
 }
 
+message TransformerList {
+    repeated Transformer transformers = 1;
+}
+
+message Transformer {
+    string name = 1;
+}
+
 message DataMsgRequest {
     string startTime = 1;
     string deviceEUI = 2;
@@ -344,6 +352,8 @@ service ConnectionService {
     rpc GetBlankConnection(Empty) returns (Connection) {}
 
     rpc GetConnection(Identifier) returns (Connection) {}
+
+    rpc GetTransformers(Empty) returns (TransformerList) {}
 
     rpc UpdateMount(UpdateMountRequest) returns (Response) {}
 
