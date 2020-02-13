@@ -131,6 +131,10 @@ message GetConnectionsRequest {
     bool active = 1;
 }
 
+message GetConnectionsByTransformerRequest {
+    string transformerNumber = 1;
+}
+
 message Identifier {
     string identifier = 1;
 }
@@ -334,6 +338,8 @@ service ConnectionService {
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
 
     rpc GetLiveConnections(GetConnectionsRequest) returns (Connections) {}
+
+    rpc GetConnectionsByTransformer(GetConnectionsByTransformerRequest) returns (Connections) {}
 
     rpc GetBlankConnection(Empty) returns (Connection) {}
 
