@@ -789,6 +789,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.createPendingConnect
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.MultipleConnectionRequest,
+ *   !proto.ppconnection.Response>}
+ */
+const methodDescriptor_ConnectionService_CreateMultiplePendingConnections = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/CreateMultiplePendingConnections',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.MultipleConnectionRequest,
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.MultipleConnectionRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.MultipleConnectionRequest,
+ *   !proto.ppconnection.Response>}
+ */
+const methodInfo_ConnectionService_CreateMultiplePendingConnections = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.MultipleConnectionRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.MultipleConnectionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.createMultiplePendingConnections =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateMultiplePendingConnections',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateMultiplePendingConnections,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.MultipleConnectionRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.createMultiplePendingConnections =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateMultiplePendingConnections',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateMultiplePendingConnections);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.UpdateConnectionRequest,
  *   !proto.ppconnection.Response>}
  */

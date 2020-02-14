@@ -6,6 +6,11 @@ message Connections {
     repeated Connection connections = 1;
 }
 
+message MultipleConnectionRequest {
+    Connection connection = 1;
+    int32 count = 2;
+}
+
 message Connection {
 	bool active = 1;
     enum ConnectionState {
@@ -137,6 +142,10 @@ message GetConnectionsByTransformerRequest {
 
 message Identifier {
     string identifier = 1;
+}
+
+message Identifiers {
+    repeated string identifiers = 1;
 }
 
 message CreateConnectionRequest {
@@ -360,6 +369,8 @@ service ConnectionService {
     rpc CreateConnection(CreateConnectionRequest) returns (Identifier) {}
 
     rpc CreatePendingConnection(Connection) returns (Identifier) {}
+
+    rpc CreateMultiplePendingConnections(MultipleConnectionRequest) returns (Response) {}
 
     rpc UpdateConnection(UpdateConnectionRequest) returns (Response) {}
 
