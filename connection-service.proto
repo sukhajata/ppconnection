@@ -370,7 +370,7 @@ service ConnectionService {
 
     rpc CreatePendingConnection(Connection) returns (Identifier) {}
 
-    rpc CreateMultiplePendingConnections(MultipleConnectionRequest) returns (Response) {}
+    rpc CreateMultiplePendingConnections(MultipleConnectionRequest) returns (Identifiers) {}
 
     rpc UpdateConnection(UpdateConnectionRequest) returns (Response) {}
 

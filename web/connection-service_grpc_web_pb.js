@@ -790,13 +790,13 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.createPendingConnect
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.MultipleConnectionRequest,
- *   !proto.ppconnection.Response>}
+ *   !proto.ppconnection.Identifiers>}
  */
 const methodDescriptor_ConnectionService_CreateMultiplePendingConnections = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/CreateMultiplePendingConnections',
   grpc.web.MethodType.UNARY,
   proto.ppconnection.MultipleConnectionRequest,
-  proto.ppconnection.Response,
+  proto.ppconnection.Identifiers,
   /**
    * @param {!proto.ppconnection.MultipleConnectionRequest} request
    * @return {!Uint8Array}
@@ -804,7 +804,7 @@ const methodDescriptor_ConnectionService_CreateMultiplePendingConnections = new 
   function(request) {
     return request.serializeBinary();
   },
-  proto.ppconnection.Response.deserializeBinary
+  proto.ppconnection.Identifiers.deserializeBinary
 );
 
 
@@ -812,10 +812,10 @@ const methodDescriptor_ConnectionService_CreateMultiplePendingConnections = new 
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.ppconnection.MultipleConnectionRequest,
- *   !proto.ppconnection.Response>}
+ *   !proto.ppconnection.Identifiers>}
  */
 const methodInfo_ConnectionService_CreateMultiplePendingConnections = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.ppconnection.Response,
+  proto.ppconnection.Identifiers,
   /**
    * @param {!proto.ppconnection.MultipleConnectionRequest} request
    * @return {!Uint8Array}
@@ -823,7 +823,7 @@ const methodInfo_ConnectionService_CreateMultiplePendingConnections = new grpc.w
   function(request) {
     return request.serializeBinary();
   },
-  proto.ppconnection.Response.deserializeBinary
+  proto.ppconnection.Identifiers.deserializeBinary
 );
 
 
@@ -832,9 +832,9 @@ const methodInfo_ConnectionService_CreateMultiplePendingConnections = new grpc.w
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Identifiers)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Identifiers>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.ppconnection.ConnectionServiceClient.prototype.createMultiplePendingConnections =
@@ -853,7 +853,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.createMultiplePendingConnec
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.ppconnection.Response>}
+ * @return {!Promise<!proto.ppconnection.Identifiers>}
  *     A native promise that resolves to the response
  */
 proto.ppconnection.ConnectionServicePromiseClient.prototype.createMultiplePendingConnections =
