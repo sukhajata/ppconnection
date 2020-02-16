@@ -219,7 +219,7 @@ message TransformerList {
 message Transformer {
     string name = 1;
 }
-
+/*
 message DataMsgRequest {
     string startTime = 1;
     string deviceEUI = 2;
@@ -349,7 +349,7 @@ message OpAlarmDatum {
     float lng = 8;
     string message = 9;
 }
-
+*/
 service ConnectionService {
 
     rpc GetConnections(GetConnectionsRequest) returns (Connections) {}
@@ -386,22 +386,22 @@ service ConnectionService {
 
     rpc GetAddress(GetAddressRequest) returns (Location) {}
 
-    rpc Geocode(Address) returns (LatLng) {}
+   // rpc Geocode(Address) returns (LatLng) {}
 
     rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
 
-    rpc GetInstMsgData(DataMsgRequest) returns (InstMsgData) {}
+  //  rpc GetInstMsgData(DataMsgRequest) returns (InstMsgData) {}
 
-    rpc GetProcMsgData(DataMsgRequest) returns (ProcMsgData) {}
+   // rpc GetProcMsgData(DataMsgRequest) returns (ProcMsgData) {}
 
-    rpc GetPQMsgData(DataMsgRequest) returns (PQMsgData) {}
+    //rpc GetPQMsgData(DataMsgRequest) returns (PQMsgData) {}
 
-    rpc GetGeoscanMsgData(DataMsgRequest) returns (GeoscanMsgData) {}
+    //rpc GetGeoscanMsgData(DataMsgRequest) returns (GeoscanMsgData) {}
 
-    rpc GetUplinkMsgData(DataMsgRequest) returns (UplinkMsgData) {}
+    //rpc GetUplinkMsgData(DataMsgRequest) returns (UplinkMsgData) {}
 
-    rpc GetUplinkDayData(DataQueryRequest) returns (UplinkDayData) {}
+    //rpc GetUplinkDayData(DataQueryRequest) returns (UplinkDayData) {}
 
-    rpc GetOpAlarms(DataQueryRequest) returns (OpAlarmData) {}
+    //rpc GetOpAlarms(DataQueryRequest) returns (OpAlarmData) {}
 
 }
