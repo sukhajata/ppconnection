@@ -1029,6 +1029,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.deleteConnection =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Device,
+ *   !proto.ppconnection.Response>}
+ */
+const methodDescriptor_ConnectionService_CreateDevice = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/CreateDevice',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Device,
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.Device} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Device,
+ *   !proto.ppconnection.Response>}
+ */
+const methodInfo_ConnectionService_CreateDevice = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.Device} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Device} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.createDevice =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateDevice',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateDevice,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Device} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.createDevice =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateDevice',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateDevice);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.UpdateDeviceRequest,
  *   !proto.ppconnection.Response>}
  */

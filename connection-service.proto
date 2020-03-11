@@ -376,6 +376,8 @@ service ConnectionService {
 
     rpc DeleteConnection(Identifier) returns (Response) {}
 
+    rpc CreateDevice(Device) returns (Response) {}
+
     rpc UpdateDevice(UpdateDeviceRequest) returns (Response) {}
 
     rpc UpdateConnectionState(UpdateConnectionStateRequest) returns (Response) {}
