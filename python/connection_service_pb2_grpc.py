@@ -158,11 +158,6 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.GetConnectionsByTransformerRequest.SerializeToString,
         response_deserializer=connection__service__pb2.Connections.FromString,
         )
-    self.GetBlankConnection = channel.unary_unary(
-        '/ppconnection.ConnectionService/GetBlankConnection',
-        request_serializer=connection__service__pb2.Empty.SerializeToString,
-        response_deserializer=connection__service__pb2.Connection.FromString,
-        )
     self.GetConnection = channel.unary_unary(
         '/ppconnection.ConnectionService/GetConnection',
         request_serializer=connection__service__pb2.Identifier.SerializeToString,
@@ -172,11 +167,6 @@ class ConnectionServiceStub(object):
         '/ppconnection.ConnectionService/GetTransformers',
         request_serializer=connection__service__pb2.Empty.SerializeToString,
         response_deserializer=connection__service__pb2.TransformerList.FromString,
-        )
-    self.UpdateMount = channel.unary_unary(
-        '/ppconnection.ConnectionService/UpdateMount',
-        request_serializer=connection__service__pb2.UpdateMountRequest.SerializeToString,
-        response_deserializer=connection__service__pb2.Response.FromString,
         )
     self.CreateConnection = channel.unary_unary(
         '/ppconnection.ConnectionService/CreateConnection',
@@ -203,16 +193,6 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.Identifier.SerializeToString,
         response_deserializer=connection__service__pb2.Response.FromString,
         )
-    self.CreateDevice = channel.unary_unary(
-        '/ppconnection.ConnectionService/CreateDevice',
-        request_serializer=connection__service__pb2.Device.SerializeToString,
-        response_deserializer=connection__service__pb2.Response.FromString,
-        )
-    self.UpdateDevice = channel.unary_unary(
-        '/ppconnection.ConnectionService/UpdateDevice',
-        request_serializer=connection__service__pb2.UpdateDeviceRequest.SerializeToString,
-        response_deserializer=connection__service__pb2.Response.FromString,
-        )
     self.UpdateConnectionState = channel.unary_unary(
         '/ppconnection.ConnectionService/UpdateConnectionState',
         request_serializer=connection__service__pb2.UpdateConnectionStateRequest.SerializeToString,
@@ -228,10 +208,20 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.UpdateLinesRequest.SerializeToString,
         response_deserializer=connection__service__pb2.Response.FromString,
         )
+    self.UpdateMount = channel.unary_unary(
+        '/ppconnection.ConnectionService/UpdateMount',
+        request_serializer=connection__service__pb2.UpdateMountRequest.SerializeToString,
+        response_deserializer=connection__service__pb2.Response.FromString,
+        )
     self.GetAddress = channel.unary_unary(
         '/ppconnection.ConnectionService/GetAddress',
         request_serializer=connection__service__pb2.GetAddressRequest.SerializeToString,
         response_deserializer=connection__service__pb2.Location.FromString,
+        )
+    self.CreateDevice = channel.unary_unary(
+        '/ppconnection.ConnectionService/CreateDevice',
+        request_serializer=connection__service__pb2.Device.SerializeToString,
+        response_deserializer=connection__service__pb2.Response.FromString,
         )
     self.GetDeviceBySerialNumber = channel.unary_unary(
         '/ppconnection.ConnectionService/GetDeviceBySerialNumber',
@@ -394,13 +384,6 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetBlankConnection(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def GetConnection(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -409,13 +392,6 @@ class ConnectionServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def GetTransformers(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def UpdateMount(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -457,20 +433,6 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CreateDevice(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def UpdateDevice(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def UpdateConnectionState(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -492,6 +454,13 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateMount(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetAddress(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -499,10 +468,16 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetDeviceBySerialNumber(self, request, context):
-    """rpc Geocode(Address) returns (LatLng) {}
+  def CreateDevice(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
-    """
+  def GetDeviceBySerialNumber(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -525,11 +500,6 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           request_deserializer=connection__service__pb2.GetConnectionsByTransformerRequest.FromString,
           response_serializer=connection__service__pb2.Connections.SerializeToString,
       ),
-      'GetBlankConnection': grpc.unary_unary_rpc_method_handler(
-          servicer.GetBlankConnection,
-          request_deserializer=connection__service__pb2.Empty.FromString,
-          response_serializer=connection__service__pb2.Connection.SerializeToString,
-      ),
       'GetConnection': grpc.unary_unary_rpc_method_handler(
           servicer.GetConnection,
           request_deserializer=connection__service__pb2.Identifier.FromString,
@@ -539,11 +509,6 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           servicer.GetTransformers,
           request_deserializer=connection__service__pb2.Empty.FromString,
           response_serializer=connection__service__pb2.TransformerList.SerializeToString,
-      ),
-      'UpdateMount': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateMount,
-          request_deserializer=connection__service__pb2.UpdateMountRequest.FromString,
-          response_serializer=connection__service__pb2.Response.SerializeToString,
       ),
       'CreateConnection': grpc.unary_unary_rpc_method_handler(
           servicer.CreateConnection,
@@ -570,16 +535,6 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           request_deserializer=connection__service__pb2.Identifier.FromString,
           response_serializer=connection__service__pb2.Response.SerializeToString,
       ),
-      'CreateDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateDevice,
-          request_deserializer=connection__service__pb2.Device.FromString,
-          response_serializer=connection__service__pb2.Response.SerializeToString,
-      ),
-      'UpdateDevice': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateDevice,
-          request_deserializer=connection__service__pb2.UpdateDeviceRequest.FromString,
-          response_serializer=connection__service__pb2.Response.SerializeToString,
-      ),
       'UpdateConnectionState': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateConnectionState,
           request_deserializer=connection__service__pb2.UpdateConnectionStateRequest.FromString,
@@ -595,10 +550,20 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           request_deserializer=connection__service__pb2.UpdateLinesRequest.FromString,
           response_serializer=connection__service__pb2.Response.SerializeToString,
       ),
+      'UpdateMount': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateMount,
+          request_deserializer=connection__service__pb2.UpdateMountRequest.FromString,
+          response_serializer=connection__service__pb2.Response.SerializeToString,
+      ),
       'GetAddress': grpc.unary_unary_rpc_method_handler(
           servicer.GetAddress,
           request_deserializer=connection__service__pb2.GetAddressRequest.FromString,
           response_serializer=connection__service__pb2.Location.SerializeToString,
+      ),
+      'CreateDevice': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateDevice,
+          request_deserializer=connection__service__pb2.Device.FromString,
+          response_serializer=connection__service__pb2.Response.SerializeToString,
       ),
       'GetDeviceBySerialNumber': grpc.unary_unary_rpc_method_handler(
           servicer.GetDeviceBySerialNumber,

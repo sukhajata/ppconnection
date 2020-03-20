@@ -358,13 +358,9 @@ service ConnectionService {
 
     rpc GetConnectionsByTransformer(GetConnectionsByTransformerRequest) returns (Connections) {}
 
-    rpc GetBlankConnection(Empty) returns (Connection) {}
-
     rpc GetConnection(Identifier) returns (Connection) {}
 
     rpc GetTransformers(Empty) returns (TransformerList) {}
-
-    rpc UpdateMount(UpdateMountRequest) returns (Response) {}
 
     rpc CreateConnection(CreateConnectionRequest) returns (Identifier) {}
 
@@ -376,21 +372,25 @@ service ConnectionService {
 
     rpc DeleteConnection(Identifier) returns (Response) {}
 
-    rpc CreateDevice(Device) returns (Response) {}
-
-    rpc UpdateDevice(UpdateDeviceRequest) returns (Response) {}
-
     rpc UpdateConnectionState(UpdateConnectionStateRequest) returns (Response) {}
 
     rpc UpdateJob(UpdateJobRequest) returns (Response) {}
 
     rpc UpdateLines(UpdateLinesRequest) returns (Response) {}
 
+    rpc UpdateMount(UpdateMountRequest) returns (Response) {}
+
     rpc GetAddress(GetAddressRequest) returns (Location) {}
+
+    rpc CreateDevice(Device) returns (Response) {}
+
+    rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
+
+    //rpc GetBlankConnection(Empty) returns (Connection) {}
 
    // rpc Geocode(Address) returns (LatLng) {}
 
-    rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
+    //rpc UpdateDevice(UpdateDeviceRequest) returns (Response) {}
 
   //  rpc GetInstMsgData(DataMsgRequest) returns (InstMsgData) {}
 

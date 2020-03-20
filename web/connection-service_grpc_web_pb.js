@@ -309,86 +309,6 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getConnectionsByTran
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.Empty,
- *   !proto.ppconnection.Connection>}
- */
-const methodDescriptor_ConnectionService_GetBlankConnection = new grpc.web.MethodDescriptor(
-  '/ppconnection.ConnectionService/GetBlankConnection',
-  grpc.web.MethodType.UNARY,
-  proto.ppconnection.Empty,
-  proto.ppconnection.Connection,
-  /**
-   * @param {!proto.ppconnection.Empty} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Connection.deserializeBinary
-);
-
-
-/**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.Empty,
- *   !proto.ppconnection.Connection>}
- */
-const methodInfo_ConnectionService_GetBlankConnection = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.ppconnection.Connection,
-  /**
-   * @param {!proto.ppconnection.Empty} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Connection.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ppconnection.Empty} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ppconnection.Connection)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Connection>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ppconnection.ConnectionServiceClient.prototype.getBlankConnection =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ppconnection.ConnectionService/GetBlankConnection',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_GetBlankConnection,
-      callback);
-};
-
-
-/**
- * @param {!proto.ppconnection.Empty} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ppconnection.Connection>}
- *     A native promise that resolves to the response
- */
-proto.ppconnection.ConnectionServicePromiseClient.prototype.getBlankConnection =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ppconnection.ConnectionService/GetBlankConnection',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_GetBlankConnection);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.Identifier,
  *   !proto.ppconnection.Connection>}
  */
@@ -543,86 +463,6 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getTransformers =
       request,
       metadata || {},
       methodDescriptor_ConnectionService_GetTransformers);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.UpdateMountRequest,
- *   !proto.ppconnection.Response>}
- */
-const methodDescriptor_ConnectionService_UpdateMount = new grpc.web.MethodDescriptor(
-  '/ppconnection.ConnectionService/UpdateMount',
-  grpc.web.MethodType.UNARY,
-  proto.ppconnection.UpdateMountRequest,
-  proto.ppconnection.Response,
-  /**
-   * @param {!proto.ppconnection.UpdateMountRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Response.deserializeBinary
-);
-
-
-/**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.UpdateMountRequest,
- *   !proto.ppconnection.Response>}
- */
-const methodInfo_ConnectionService_UpdateMount = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.ppconnection.Response,
-  /**
-   * @param {!proto.ppconnection.UpdateMountRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Response.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ppconnection.UpdateMountRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ppconnection.ConnectionServiceClient.prototype.updateMount =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ppconnection.ConnectionService/UpdateMount',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_UpdateMount,
-      callback);
-};
-
-
-/**
- * @param {!proto.ppconnection.UpdateMountRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ppconnection.Response>}
- *     A native promise that resolves to the response
- */
-proto.ppconnection.ConnectionServicePromiseClient.prototype.updateMount =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ppconnection.ConnectionService/UpdateMount',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_UpdateMount);
 };
 
 
@@ -1029,166 +869,6 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.deleteConnection =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.Device,
- *   !proto.ppconnection.Response>}
- */
-const methodDescriptor_ConnectionService_CreateDevice = new grpc.web.MethodDescriptor(
-  '/ppconnection.ConnectionService/CreateDevice',
-  grpc.web.MethodType.UNARY,
-  proto.ppconnection.Device,
-  proto.ppconnection.Response,
-  /**
-   * @param {!proto.ppconnection.Device} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Response.deserializeBinary
-);
-
-
-/**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.Device,
- *   !proto.ppconnection.Response>}
- */
-const methodInfo_ConnectionService_CreateDevice = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.ppconnection.Response,
-  /**
-   * @param {!proto.ppconnection.Device} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Response.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ppconnection.Device} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ppconnection.ConnectionServiceClient.prototype.createDevice =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ppconnection.ConnectionService/CreateDevice',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_CreateDevice,
-      callback);
-};
-
-
-/**
- * @param {!proto.ppconnection.Device} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ppconnection.Response>}
- *     A native promise that resolves to the response
- */
-proto.ppconnection.ConnectionServicePromiseClient.prototype.createDevice =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ppconnection.ConnectionService/CreateDevice',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_CreateDevice);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.UpdateDeviceRequest,
- *   !proto.ppconnection.Response>}
- */
-const methodDescriptor_ConnectionService_UpdateDevice = new grpc.web.MethodDescriptor(
-  '/ppconnection.ConnectionService/UpdateDevice',
-  grpc.web.MethodType.UNARY,
-  proto.ppconnection.UpdateDeviceRequest,
-  proto.ppconnection.Response,
-  /**
-   * @param {!proto.ppconnection.UpdateDeviceRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Response.deserializeBinary
-);
-
-
-/**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.UpdateDeviceRequest,
- *   !proto.ppconnection.Response>}
- */
-const methodInfo_ConnectionService_UpdateDevice = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.ppconnection.Response,
-  /**
-   * @param {!proto.ppconnection.UpdateDeviceRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ppconnection.Response.deserializeBinary
-);
-
-
-/**
- * @param {!proto.ppconnection.UpdateDeviceRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.ppconnection.ConnectionServiceClient.prototype.updateDevice =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ppconnection.ConnectionService/UpdateDevice',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_UpdateDevice,
-      callback);
-};
-
-
-/**
- * @param {!proto.ppconnection.UpdateDeviceRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.ppconnection.Response>}
- *     A native promise that resolves to the response
- */
-proto.ppconnection.ConnectionServicePromiseClient.prototype.updateDevice =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ppconnection.ConnectionService/UpdateDevice',
-      request,
-      metadata || {},
-      methodDescriptor_ConnectionService_UpdateDevice);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.UpdateConnectionStateRequest,
  *   !proto.ppconnection.Response>}
  */
@@ -1429,6 +1109,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.updateLines =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.UpdateMountRequest,
+ *   !proto.ppconnection.Response>}
+ */
+const methodDescriptor_ConnectionService_UpdateMount = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/UpdateMount',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.UpdateMountRequest,
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.UpdateMountRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.UpdateMountRequest,
+ *   !proto.ppconnection.Response>}
+ */
+const methodInfo_ConnectionService_UpdateMount = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.UpdateMountRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.UpdateMountRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.updateMount =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/UpdateMount',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_UpdateMount,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.UpdateMountRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.updateMount =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/UpdateMount',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_UpdateMount);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.GetAddressRequest,
  *   !proto.ppconnection.Location>}
  */
@@ -1503,6 +1263,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getAddress =
       request,
       metadata || {},
       methodDescriptor_ConnectionService_GetAddress);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Device,
+ *   !proto.ppconnection.Response>}
+ */
+const methodDescriptor_ConnectionService_CreateDevice = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/CreateDevice',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Device,
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.Device} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Device,
+ *   !proto.ppconnection.Response>}
+ */
+const methodInfo_ConnectionService_CreateDevice = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.Device} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Device} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.createDevice =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateDevice',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateDevice,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Device} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.createDevice =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateDevice',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateDevice);
 };
 
 
