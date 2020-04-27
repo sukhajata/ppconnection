@@ -1047,7 +1047,7 @@ proto.ppconnection.Connection.toObject = function(includeInstance, msg) {
     job: (f = msg.getJob()) && proto.ppconnection.Job.toObject(includeInstance, f),
     id: jspb.Message.getFieldWithDefault(msg, 17, ""),
     transformer: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    rating: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0)
+    rating: jspb.Message.getFieldWithDefault(msg, 19, 0)
   };
 
   if (includeInstance) {
@@ -1161,7 +1161,7 @@ proto.ppconnection.Connection.deserializeBinaryFromReader = function(msg, reader
       msg.setTransformer(value);
       break;
     case 19:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setRating(value);
       break;
     default:
@@ -1324,8 +1324,8 @@ proto.ppconnection.Connection.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getRating();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  if (f !== 0) {
+    writer.writeInt64(
       19,
       f
     );
@@ -1761,11 +1761,11 @@ proto.ppconnection.Connection.prototype.setTransformer = function(value) {
 
 
 /**
- * optional float rating = 19;
+ * optional int64 rating = 19;
  * @return {number}
  */
 proto.ppconnection.Connection.prototype.getRating = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
 
@@ -1774,7 +1774,7 @@ proto.ppconnection.Connection.prototype.getRating = function() {
  * @return {!proto.ppconnection.Connection} returns this
  */
 proto.ppconnection.Connection.prototype.setRating = function(value) {
-  return jspb.Message.setProto3FloatField(this, 19, value);
+  return jspb.Message.setProto3IntField(this, 19, value);
 };
 
 

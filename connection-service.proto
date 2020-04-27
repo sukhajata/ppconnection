@@ -45,7 +45,7 @@ message Connection {
     Job job = 16;
     string id = 17;
     string transformer = 18;
-    float rating = 19;
+    int64 rating = 19;
 }
 
 message Job {
