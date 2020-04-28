@@ -17,6 +17,7 @@ goog.exportSymbol('proto.ppconnection.Connection', null, global);
 goog.exportSymbol('proto.ppconnection.Connection.ConnectionState', null, global);
 goog.exportSymbol('proto.ppconnection.Connection.ConnectionType', null, global);
 goog.exportSymbol('proto.ppconnection.Connection.ModelType', null, global);
+goog.exportSymbol('proto.ppconnection.ConnectionImage', null, global);
 goog.exportSymbol('proto.ppconnection.Connections', null, global);
 goog.exportSymbol('proto.ppconnection.CreateConnectionRequest', null, global);
 goog.exportSymbol('proto.ppconnection.Device', null, global);
@@ -27,7 +28,6 @@ goog.exportSymbol('proto.ppconnection.GetConnectionsRequest', null, global);
 goog.exportSymbol('proto.ppconnection.GetDeviceBySerialNumberRequest', null, global);
 goog.exportSymbol('proto.ppconnection.Identifier', null, global);
 goog.exportSymbol('proto.ppconnection.Identifiers', null, global);
-goog.exportSymbol('proto.ppconnection.Image', null, global);
 goog.exportSymbol('proto.ppconnection.Job', null, global);
 goog.exportSymbol('proto.ppconnection.Job.JobState', null, global);
 goog.exportSymbol('proto.ppconnection.LatLng', null, global);
@@ -667,16 +667,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ppconnection.Image = function(opt_data) {
+proto.ppconnection.ConnectionImage = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.ppconnection.Image, jspb.Message);
+goog.inherits(proto.ppconnection.ConnectionImage, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ppconnection.Image.displayName = 'proto.ppconnection.Image';
+  proto.ppconnection.ConnectionImage.displayName = 'proto.ppconnection.ConnectionImage';
 }
 
 /**
@@ -6954,8 +6954,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ppconnection.Image.prototype.toObject = function(opt_includeInstance) {
-  return proto.ppconnection.Image.toObject(opt_includeInstance, this);
+proto.ppconnection.ConnectionImage.prototype.toObject = function(opt_includeInstance) {
+  return proto.ppconnection.ConnectionImage.toObject(opt_includeInstance, this);
 };
 
 
@@ -6964,11 +6964,11 @@ proto.ppconnection.Image.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ppconnection.Image} msg The msg instance to transform.
+ * @param {!proto.ppconnection.ConnectionImage} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ppconnection.Image.toObject = function(includeInstance, msg) {
+proto.ppconnection.ConnectionImage.toObject = function(includeInstance, msg) {
   var f, obj = {
     identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -6985,23 +6985,23 @@ proto.ppconnection.Image.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ppconnection.Image}
+ * @return {!proto.ppconnection.ConnectionImage}
  */
-proto.ppconnection.Image.deserializeBinary = function(bytes) {
+proto.ppconnection.ConnectionImage.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ppconnection.Image;
-  return proto.ppconnection.Image.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ppconnection.ConnectionImage;
+  return proto.ppconnection.ConnectionImage.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ppconnection.Image} msg The message object to deserialize into.
+ * @param {!proto.ppconnection.ConnectionImage} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ppconnection.Image}
+ * @return {!proto.ppconnection.ConnectionImage}
  */
-proto.ppconnection.Image.deserializeBinaryFromReader = function(msg, reader) {
+proto.ppconnection.ConnectionImage.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7029,9 +7029,9 @@ proto.ppconnection.Image.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ppconnection.Image.prototype.serializeBinary = function() {
+proto.ppconnection.ConnectionImage.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ppconnection.Image.serializeBinaryToWriter(this, writer);
+  proto.ppconnection.ConnectionImage.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7039,11 +7039,11 @@ proto.ppconnection.Image.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ppconnection.Image} message
+ * @param {!proto.ppconnection.ConnectionImage} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ppconnection.Image.serializeBinaryToWriter = function(message, writer) {
+proto.ppconnection.ConnectionImage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getIdentifier();
   if (f.length > 0) {
@@ -7066,16 +7066,16 @@ proto.ppconnection.Image.serializeBinaryToWriter = function(message, writer) {
  * optional string identifier = 1;
  * @return {string}
  */
-proto.ppconnection.Image.prototype.getIdentifier = function() {
+proto.ppconnection.ConnectionImage.prototype.getIdentifier = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ppconnection.Image} returns this
+ * @return {!proto.ppconnection.ConnectionImage} returns this
  */
-proto.ppconnection.Image.prototype.setIdentifier = function(value) {
+proto.ppconnection.ConnectionImage.prototype.setIdentifier = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7084,16 +7084,16 @@ proto.ppconnection.Image.prototype.setIdentifier = function(value) {
  * optional string value = 2;
  * @return {string}
  */
-proto.ppconnection.Image.prototype.getValue = function() {
+proto.ppconnection.ConnectionImage.prototype.getValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.ppconnection.Image} returns this
+ * @return {!proto.ppconnection.ConnectionImage} returns this
  */
-proto.ppconnection.Image.prototype.setValue = function(value) {
+proto.ppconnection.ConnectionImage.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

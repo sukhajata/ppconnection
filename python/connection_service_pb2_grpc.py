@@ -230,13 +230,13 @@ class ConnectionServiceStub(object):
         )
     self.CreateImage = channel.unary_unary(
         '/ppconnection.ConnectionService/CreateImage',
-        request_serializer=connection__service__pb2.Image.SerializeToString,
+        request_serializer=connection__service__pb2.ConnectionImage.SerializeToString,
         response_deserializer=connection__service__pb2.Identifier.FromString,
         )
     self.GetImage = channel.unary_unary(
         '/ppconnection.ConnectionService/GetImage',
         request_serializer=connection__service__pb2.Identifier.SerializeToString,
-        response_deserializer=connection__service__pb2.Image.FromString,
+        response_deserializer=connection__service__pb2.ConnectionImage.FromString,
         )
 
 
@@ -596,13 +596,13 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
       ),
       'CreateImage': grpc.unary_unary_rpc_method_handler(
           servicer.CreateImage,
-          request_deserializer=connection__service__pb2.Image.FromString,
+          request_deserializer=connection__service__pb2.ConnectionImage.FromString,
           response_serializer=connection__service__pb2.Identifier.SerializeToString,
       ),
       'GetImage': grpc.unary_unary_rpc_method_handler(
           servicer.GetImage,
           request_deserializer=connection__service__pb2.Identifier.FromString,
-          response_serializer=connection__service__pb2.Image.SerializeToString,
+          response_serializer=connection__service__pb2.ConnectionImage.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

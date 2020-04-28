@@ -222,7 +222,7 @@ message Transformer {
     string name = 1;
 }
 
-message Image {
+message ConnectionImage {
     string identifier = 1;
     string value = 2;
 }
@@ -394,9 +394,9 @@ service ConnectionService {
 
     rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
 
-    rpc CreateImage(Image) returns (Identifier) {}
+    rpc CreateImage(ConnectionImage) returns (Identifier) {}
 
-    rpc GetImage(Identifier) returns (Image) {}
+    rpc GetImage(Identifier) returns (ConnectionImage) {}
 
     //rpc GetBlankConnection(Empty) returns (Connection) {}
 

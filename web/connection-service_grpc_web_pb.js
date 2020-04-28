@@ -1429,16 +1429,16 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getDeviceBySerialNum
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.Image,
+ *   !proto.ppconnection.ConnectionImage,
  *   !proto.ppconnection.Identifier>}
  */
 const methodDescriptor_ConnectionService_CreateImage = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/CreateImage',
   grpc.web.MethodType.UNARY,
-  proto.ppconnection.Image,
+  proto.ppconnection.ConnectionImage,
   proto.ppconnection.Identifier,
   /**
-   * @param {!proto.ppconnection.Image} request
+   * @param {!proto.ppconnection.ConnectionImage} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1451,13 +1451,13 @@ const methodDescriptor_ConnectionService_CreateImage = new grpc.web.MethodDescri
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.Image,
+ *   !proto.ppconnection.ConnectionImage,
  *   !proto.ppconnection.Identifier>}
  */
 const methodInfo_ConnectionService_CreateImage = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.Identifier,
   /**
-   * @param {!proto.ppconnection.Image} request
+   * @param {!proto.ppconnection.ConnectionImage} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1468,7 +1468,7 @@ const methodInfo_ConnectionService_CreateImage = new grpc.web.AbstractClientBase
 
 
 /**
- * @param {!proto.ppconnection.Image} request The
+ * @param {!proto.ppconnection.ConnectionImage} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1489,7 +1489,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.createImage =
 
 
 /**
- * @param {!proto.ppconnection.Image} request The
+ * @param {!proto.ppconnection.ConnectionImage} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1510,13 +1510,13 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.createImage =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.Identifier,
- *   !proto.ppconnection.Image>}
+ *   !proto.ppconnection.ConnectionImage>}
  */
 const methodDescriptor_ConnectionService_GetImage = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/GetImage',
   grpc.web.MethodType.UNARY,
   proto.ppconnection.Identifier,
-  proto.ppconnection.Image,
+  proto.ppconnection.ConnectionImage,
   /**
    * @param {!proto.ppconnection.Identifier} request
    * @return {!Uint8Array}
@@ -1524,7 +1524,7 @@ const methodDescriptor_ConnectionService_GetImage = new grpc.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto.ppconnection.Image.deserializeBinary
+  proto.ppconnection.ConnectionImage.deserializeBinary
 );
 
 
@@ -1532,10 +1532,10 @@ const methodDescriptor_ConnectionService_GetImage = new grpc.web.MethodDescripto
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
  *   !proto.ppconnection.Identifier,
- *   !proto.ppconnection.Image>}
+ *   !proto.ppconnection.ConnectionImage>}
  */
 const methodInfo_ConnectionService_GetImage = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.ppconnection.Image,
+  proto.ppconnection.ConnectionImage,
   /**
    * @param {!proto.ppconnection.Identifier} request
    * @return {!Uint8Array}
@@ -1543,7 +1543,7 @@ const methodInfo_ConnectionService_GetImage = new grpc.web.AbstractClientBase.Me
   function(request) {
     return request.serializeBinary();
   },
-  proto.ppconnection.Image.deserializeBinary
+  proto.ppconnection.ConnectionImage.deserializeBinary
 );
 
 
@@ -1552,9 +1552,9 @@ const methodInfo_ConnectionService_GetImage = new grpc.web.AbstractClientBase.Me
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.ppconnection.Image)}
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.ConnectionImage)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Image>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.ConnectionImage>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.ppconnection.ConnectionServiceClient.prototype.getImage =
@@ -1573,7 +1573,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.getImage =
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.ppconnection.Image>}
+ * @return {!Promise<!proto.ppconnection.ConnectionImage>}
  *     A native promise that resolves to the response
  */
 proto.ppconnection.ConnectionServicePromiseClient.prototype.getImage =
