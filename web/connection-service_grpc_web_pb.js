@@ -1426,5 +1426,165 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getDeviceBySerialNum
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Image,
+ *   !proto.ppconnection.Identifier>}
+ */
+const methodDescriptor_ConnectionService_CreateImage = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/CreateImage',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Image,
+  proto.ppconnection.Identifier,
+  /**
+   * @param {!proto.ppconnection.Image} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Identifier.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Image,
+ *   !proto.ppconnection.Identifier>}
+ */
+const methodInfo_ConnectionService_CreateImage = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Identifier,
+  /**
+   * @param {!proto.ppconnection.Image} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Identifier.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Image} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Identifier)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Identifier>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.createImage =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateImage',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateImage,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Image} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Identifier>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.createImage =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/CreateImage',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_CreateImage);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Identifier,
+ *   !proto.ppconnection.Image>}
+ */
+const methodDescriptor_ConnectionService_GetImage = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetImage',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Identifier,
+  proto.ppconnection.Image,
+  /**
+   * @param {!proto.ppconnection.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Image.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Identifier,
+ *   !proto.ppconnection.Image>}
+ */
+const methodInfo_ConnectionService_GetImage = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Image,
+  /**
+   * @param {!proto.ppconnection.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Image.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Image)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Image>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getImage =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetImage',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetImage,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Image>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getImage =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetImage',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetImage);
+};
+
+
 module.exports = proto.ppconnection;
 

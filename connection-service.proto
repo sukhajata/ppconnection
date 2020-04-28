@@ -46,6 +46,7 @@ message Connection {
     string id = 17;
     string transformer = 18;
     int64 rating = 19;
+    repeated string images = 20;
 }
 
 message Job {
@@ -220,6 +221,12 @@ message TransformerList {
 message Transformer {
     string name = 1;
 }
+
+message Image {
+    string identifier = 1;
+    string value = 2;
+}
+
 /*
 message DataMsgRequest {
     string startTime = 1;
@@ -386,6 +393,10 @@ service ConnectionService {
     rpc CreateDevice(Device) returns (Response) {}
 
     rpc GetDeviceBySerialNumber(GetDeviceBySerialNumberRequest) returns (Device) {}
+
+    rpc CreateImage(Image) returns (Identifier) {}
+
+    rpc GetImage(Identifier) returns (Image) {}
 
     //rpc GetBlankConnection(Empty) returns (Connection) {}
 

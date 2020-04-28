@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='ppconnection',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x18\x63onnection-service.proto\x12\x0cppconnection\"<\n\x0b\x43onnections\x12-\n\x0b\x63onnections\x18\x01 \x03(\x0b\x32\x18.ppconnection.Connection\"X\n\x19MultipleConnectionRequest\x12,\n\nconnection\x18\x01 \x01(\x0b\x32\x18.ppconnection.Connection\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\"\xdb\x05\n\nConnection\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x41\n\x0f\x63onnectionState\x18\x02 \x01(\x0e\x32(.ppconnection.Connection.ConnectionState\x12?\n\x0e\x63onnectionType\x18\x03 \x01(\x0e\x32\'.ppconnection.Connection.ConnectionType\x12\x13\n\x0b\x64\x61teCreated\x18\x04 \x01(\t\x12$\n\x06\x64\x65vice\x18\x05 \x01(\x0b\x32\x14.ppconnection.Device\x12\x10\n\x08IDNumber\x18\x06 \x01(\t\x12\x11\n\tnumPhases\x18\x07 \x01(\x05\x12\r\n\x05line1\x18\x08 \x01(\x05\x12\r\n\x05line2\x18\t \x01(\x05\x12\r\n\x05line3\x18\n \x01(\x05\x12(\n\x08location\x18\x0b \x01(\x0b\x32\x16.ppconnection.Location\x12\x35\n\tmodelType\x18\x0c \x01(\x0e\x32\".ppconnection.Connection.ModelType\x12\"\n\x05mount\x18\r \x01(\x0b\x32\x13.ppconnection.Mount\x12\x10\n\x08nickName\x18\x0e \x01(\t\x12\x0c\n\x04type\x18\x0f \x01(\t\x12\x1e\n\x03job\x18\x10 \x01(\x0b\x32\x11.ppconnection.Job\x12\n\n\x02id\x18\x11 \x01(\t\x12\x13\n\x0btransformer\x18\x12 \x01(\t\x12\x0e\n\x06rating\x18\x13 \x01(\x03\"F\n\x0f\x43onnectionState\x12\x17\n\x13NO_CONNECTION_STATE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tCONNECTED\x10\x02\"<\n\x0e\x43onnectionType\x12\x16\n\x12NO_CONNECTION_TYPE\x10\x00\x12\x07\n\x03ICP\x10\x01\x12\t\n\x05\x41SSET\x10\x02\"0\n\tModelType\x12\x11\n\rNO_MODEL_TYPE\x10\x00\x12\x07\n\x03M11\x10\x01\x12\x07\n\x03M31\x10\x02\"\xa3\x02\n\x03Job\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x10\n\x08\x63omments\x18\x02 \x01(\t\x12\r\n\x05notes\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61teCreated\x18\x04 \x01(\t\x12,\n\x08jobState\x18\x05 \x01(\x0e\x32\x1a.ppconnection.Job.JobState\x12\x18\n\x10reasonForFailure\x18\x06 \x01(\t\x12,\n\ntestResult\x18\x07 \x01(\x0b\x32\x18.ppconnection.TestResult\"`\n\x08JobState\x12\x10\n\x0cNO_JOB_STATE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0e\n\nCONFIGURED\x10\x02\x12\r\n\tINSTALLED\x10\x03\x12\n\n\x06TESTED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\"\xeb\x01\n\nTestResult\x12\x14\n\x0c\x64ownlinkRSSI\x18\x01 \x01(\x02\x12\x13\n\x0b\x64ownlinkSNR\x18\x02 \x01(\x02\x12!\n\x05line1\x18\x03 \x01(\x0b\x32\x12.ppconnection.Line\x12!\n\x05line2\x18\x04 \x01(\x0b\x32\x12.ppconnection.Line\x12!\n\x05line3\x18\x05 \x01(\x0b\x32\x12.ppconnection.Line\x12\x10\n\x08received\x18\x06 \x01(\x08\x12\x10\n\x08software\x18\x07 \x01(\x02\x12\x12\n\nuplinkRSSI\x18\x08 \x01(\x02\x12\x11\n\tuplinkSNR\x18\t \x01(\x02\"(\n\x04Line\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\x0f\n\x07voltage\x18\x02 \x01(\x02\"s\n\x08Location\x12\x16\n\x0estreetAddress1\x18\x01 \x01(\t\x12\x16\n\x0estreetAddress2\x18\x02 \x01(\t\x12\x0c\n\x04town\x18\x03 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x0b\n\x03lng\x18\x05 \x01(\x02\x12\x0b\n\x03lat\x18\x06 \x01(\x02\"\x91\x03\n\x05Mount\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12(\n\x08location\x18\x02 \x01(\x0b\x32\x16.ppconnection.Location\x12\x13\n\x0bmountNumber\x18\x03 \x01(\t\x12\x30\n\tmountType\x18\x04 \x01(\x0e\x32\x1d.ppconnection.Mount.MountType\x12\x38\n\renclosureType\x18\x05 \x01(\x0e\x32!.ppconnection.Mount.EnclosureType\x12\x13\n\x0b\x65nclosureId\x18\x06 \x01(\t\"l\n\tMountType\x12\x11\n\rNO_MOUNT_TYPE\x10\x00\x12\x0c\n\x08\x43ROSSARM\x10\x01\x12\x0f\n\x0bSWITCHBOARD\x10\x02\x12\r\n\tMETER_BOX\x10\x03\x12\x0e\n\nSUBSTATION\x10\x04\x12\x0e\n\nPILLAR_BOX\x10\x05\"J\n\rEnclosureType\x12\x15\n\x11NO_ENCLOSURE_TYPE\x10\x00\x12\n\n\x06SINGLE\x10\x01\x12\n\n\x06\x44OUBLE\x10\x02\x12\n\n\x06TRIPLE\x10\x03\"\xc8\x01\n\x06\x44\x65vice\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x11\n\tdeviceEUI\x18\x02 \x01(\t\x12.\n\x0bloRaDetails\x18\x03 \x01(\x0b\x32\x19.ppconnection.LoRaDetails\x12\x12\n\nmacAddress\x18\x04 \x01(\t\x12\x11\n\tmodelType\x18\x05 \x01(\x05\x12\x1c\n\x14mqttConnectionString\x18\x06 \x01(\t\x12\x14\n\x0cserialNumber\x18\x07 \x01(\x05\x12\x10\n\x08ppNumber\x18\x08 \x01(\t\"x\n\x0bLoRaDetails\x12\x16\n\x0e\x61pplicationEUI\x18\x01 \x01(\t\x12\x1e\n\x16\x61pplicationSoftwareKey\x18\x02 \x01(\t\x12\x15\n\rdeviceAddress\x18\x03 \x01(\t\x12\x1a\n\x12networkSoftwareKey\x18\x04 \x01(\t\"\'\n\x15GetConnectionsRequest\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\"?\n\"GetConnectionsByTransformerRequest\x12\x19\n\x11transformerNumber\x18\x01 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"\"\n\x0bIdentifiers\x12\x13\n\x0bidentifiers\x18\x01 \x03(\t\"^\n\x17\x43reateConnectionRequest\x12\x15\n\roldIdentifier\x18\x01 \x01(\t\x12,\n\nconnection\x18\x02 \x01(\x0b\x32\x18.ppconnection.Connection\"[\n\x17UpdateConnectionRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12,\n\nconnection\x18\x02 \x01(\x0b\x32\x18.ppconnection.Connection\"L\n\x12UpdateMountRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\"\n\x05mount\x18\x02 \x01(\x0b\x32\x13.ppconnection.Mount\"O\n\x13UpdateDeviceRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12$\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32\x14.ppconnection.Device\"u\n\x1cUpdateConnectionStateRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x41\n\x0f\x63onnectionState\x18\x02 \x01(\x0e\x32(.ppconnection.Connection.ConnectionState\"F\n\x10UpdateJobRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x1e\n\x03job\x18\x02 \x01(\x0b\x32\x11.ppconnection.Job\"U\n\x12UpdateLinesRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\r\n\x05line1\x18\x02 \x01(\x05\x12\r\n\x05line2\x18\x03 \x01(\x05\x12\r\n\x05line3\x18\x04 \x01(\x05\"*\n\x11GetAddressRequest\x12\x15\n\rinstallNumber\x18\x01 \x01(\t\"6\n\x1eGetDeviceBySerialNumberRequest\x12\x14\n\x0cserialNumber\x18\x01 \x01(\t\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"?\n\x07\x41\x64\x64ress\x12\x15\n\rstreetAddress\x18\x01 \x01(\t\x12\x0c\n\x04town\x18\x02 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x03 \x01(\t\"\"\n\x06LatLng\x12\x0b\n\x03lat\x18\x01 \x01(\x02\x12\x0b\n\x03lng\x18\x02 \x01(\x02\"\x07\n\x05\x45mpty\"B\n\x0fTransformerList\x12/\n\x0ctransformers\x18\x01 \x03(\x0b\x32\x19.ppconnection.Transformer\"\x1b\n\x0bTransformer\x12\x0c\n\x04name\x18\x01 \x01(\t2\x92\x0b\n\x11\x43onnectionService\x12R\n\x0eGetConnections\x12#.ppconnection.GetConnectionsRequest\x1a\x19.ppconnection.Connections\"\x00\x12V\n\x12GetLiveConnections\x12#.ppconnection.GetConnectionsRequest\x1a\x19.ppconnection.Connections\"\x00\x12l\n\x1bGetConnectionsByTransformer\x12\x30.ppconnection.GetConnectionsByTransformerRequest\x1a\x19.ppconnection.Connections\"\x00\x12\x45\n\rGetConnection\x12\x18.ppconnection.Identifier\x1a\x18.ppconnection.Connection\"\x00\x12G\n\x0fGetTransformers\x12\x13.ppconnection.Empty\x1a\x1d.ppconnection.TransformerList\"\x00\x12U\n\x10\x43reateConnection\x12%.ppconnection.CreateConnectionRequest\x1a\x18.ppconnection.Identifier\"\x00\x12O\n\x17\x43reatePendingConnection\x12\x18.ppconnection.Connection\x1a\x18.ppconnection.Identifier\"\x00\x12h\n CreateMultiplePendingConnections\x12\'.ppconnection.MultipleConnectionRequest\x1a\x19.ppconnection.Identifiers\"\x00\x12S\n\x10UpdateConnection\x12%.ppconnection.UpdateConnectionRequest\x1a\x16.ppconnection.Response\"\x00\x12\x46\n\x10\x44\x65leteConnection\x12\x18.ppconnection.Identifier\x1a\x16.ppconnection.Response\"\x00\x12]\n\x15UpdateConnectionState\x12*.ppconnection.UpdateConnectionStateRequest\x1a\x16.ppconnection.Response\"\x00\x12\x45\n\tUpdateJob\x12\x1e.ppconnection.UpdateJobRequest\x1a\x16.ppconnection.Response\"\x00\x12I\n\x0bUpdateLines\x12 .ppconnection.UpdateLinesRequest\x1a\x16.ppconnection.Response\"\x00\x12I\n\x0bUpdateMount\x12 .ppconnection.UpdateMountRequest\x1a\x16.ppconnection.Response\"\x00\x12G\n\nGetAddress\x12\x1f.ppconnection.GetAddressRequest\x1a\x16.ppconnection.Location\"\x00\x12>\n\x0c\x43reateDevice\x12\x14.ppconnection.Device\x1a\x16.ppconnection.Response\"\x00\x12_\n\x17GetDeviceBySerialNumber\x12,.ppconnection.GetDeviceBySerialNumberRequest\x1a\x14.ppconnection.Device\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x18\x63onnection-service.proto\x12\x0cppconnection\"<\n\x0b\x43onnections\x12-\n\x0b\x63onnections\x18\x01 \x03(\x0b\x32\x18.ppconnection.Connection\"X\n\x19MultipleConnectionRequest\x12,\n\nconnection\x18\x01 \x01(\x0b\x32\x18.ppconnection.Connection\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\"\xeb\x05\n\nConnection\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x41\n\x0f\x63onnectionState\x18\x02 \x01(\x0e\x32(.ppconnection.Connection.ConnectionState\x12?\n\x0e\x63onnectionType\x18\x03 \x01(\x0e\x32\'.ppconnection.Connection.ConnectionType\x12\x13\n\x0b\x64\x61teCreated\x18\x04 \x01(\t\x12$\n\x06\x64\x65vice\x18\x05 \x01(\x0b\x32\x14.ppconnection.Device\x12\x10\n\x08IDNumber\x18\x06 \x01(\t\x12\x11\n\tnumPhases\x18\x07 \x01(\x05\x12\r\n\x05line1\x18\x08 \x01(\x05\x12\r\n\x05line2\x18\t \x01(\x05\x12\r\n\x05line3\x18\n \x01(\x05\x12(\n\x08location\x18\x0b \x01(\x0b\x32\x16.ppconnection.Location\x12\x35\n\tmodelType\x18\x0c \x01(\x0e\x32\".ppconnection.Connection.ModelType\x12\"\n\x05mount\x18\r \x01(\x0b\x32\x13.ppconnection.Mount\x12\x10\n\x08nickName\x18\x0e \x01(\t\x12\x0c\n\x04type\x18\x0f \x01(\t\x12\x1e\n\x03job\x18\x10 \x01(\x0b\x32\x11.ppconnection.Job\x12\n\n\x02id\x18\x11 \x01(\t\x12\x13\n\x0btransformer\x18\x12 \x01(\t\x12\x0e\n\x06rating\x18\x13 \x01(\x03\x12\x0e\n\x06images\x18\x14 \x03(\t\"F\n\x0f\x43onnectionState\x12\x17\n\x13NO_CONNECTION_STATE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\r\n\tCONNECTED\x10\x02\"<\n\x0e\x43onnectionType\x12\x16\n\x12NO_CONNECTION_TYPE\x10\x00\x12\x07\n\x03ICP\x10\x01\x12\t\n\x05\x41SSET\x10\x02\"0\n\tModelType\x12\x11\n\rNO_MODEL_TYPE\x10\x00\x12\x07\n\x03M11\x10\x01\x12\x07\n\x03M31\x10\x02\"\xa3\x02\n\x03Job\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x10\n\x08\x63omments\x18\x02 \x01(\t\x12\r\n\x05notes\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61teCreated\x18\x04 \x01(\t\x12,\n\x08jobState\x18\x05 \x01(\x0e\x32\x1a.ppconnection.Job.JobState\x12\x18\n\x10reasonForFailure\x18\x06 \x01(\t\x12,\n\ntestResult\x18\x07 \x01(\x0b\x32\x18.ppconnection.TestResult\"`\n\x08JobState\x12\x10\n\x0cNO_JOB_STATE\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0e\n\nCONFIGURED\x10\x02\x12\r\n\tINSTALLED\x10\x03\x12\n\n\x06TESTED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\"\xeb\x01\n\nTestResult\x12\x14\n\x0c\x64ownlinkRSSI\x18\x01 \x01(\x02\x12\x13\n\x0b\x64ownlinkSNR\x18\x02 \x01(\x02\x12!\n\x05line1\x18\x03 \x01(\x0b\x32\x12.ppconnection.Line\x12!\n\x05line2\x18\x04 \x01(\x0b\x32\x12.ppconnection.Line\x12!\n\x05line3\x18\x05 \x01(\x0b\x32\x12.ppconnection.Line\x12\x10\n\x08received\x18\x06 \x01(\x08\x12\x10\n\x08software\x18\x07 \x01(\x02\x12\x12\n\nuplinkRSSI\x18\x08 \x01(\x02\x12\x11\n\tuplinkSNR\x18\t \x01(\x02\"(\n\x04Line\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\x0f\n\x07voltage\x18\x02 \x01(\x02\"s\n\x08Location\x12\x16\n\x0estreetAddress1\x18\x01 \x01(\t\x12\x16\n\x0estreetAddress2\x18\x02 \x01(\t\x12\x0c\n\x04town\x18\x03 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x04 \x01(\t\x12\x0b\n\x03lng\x18\x05 \x01(\x02\x12\x0b\n\x03lat\x18\x06 \x01(\x02\"\x91\x03\n\x05Mount\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12(\n\x08location\x18\x02 \x01(\x0b\x32\x16.ppconnection.Location\x12\x13\n\x0bmountNumber\x18\x03 \x01(\t\x12\x30\n\tmountType\x18\x04 \x01(\x0e\x32\x1d.ppconnection.Mount.MountType\x12\x38\n\renclosureType\x18\x05 \x01(\x0e\x32!.ppconnection.Mount.EnclosureType\x12\x13\n\x0b\x65nclosureId\x18\x06 \x01(\t\"l\n\tMountType\x12\x11\n\rNO_MOUNT_TYPE\x10\x00\x12\x0c\n\x08\x43ROSSARM\x10\x01\x12\x0f\n\x0bSWITCHBOARD\x10\x02\x12\r\n\tMETER_BOX\x10\x03\x12\x0e\n\nSUBSTATION\x10\x04\x12\x0e\n\nPILLAR_BOX\x10\x05\"J\n\rEnclosureType\x12\x15\n\x11NO_ENCLOSURE_TYPE\x10\x00\x12\n\n\x06SINGLE\x10\x01\x12\n\n\x06\x44OUBLE\x10\x02\x12\n\n\x06TRIPLE\x10\x03\"\xc8\x01\n\x06\x44\x65vice\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x11\n\tdeviceEUI\x18\x02 \x01(\t\x12.\n\x0bloRaDetails\x18\x03 \x01(\x0b\x32\x19.ppconnection.LoRaDetails\x12\x12\n\nmacAddress\x18\x04 \x01(\t\x12\x11\n\tmodelType\x18\x05 \x01(\x05\x12\x1c\n\x14mqttConnectionString\x18\x06 \x01(\t\x12\x14\n\x0cserialNumber\x18\x07 \x01(\x05\x12\x10\n\x08ppNumber\x18\x08 \x01(\t\"x\n\x0bLoRaDetails\x12\x16\n\x0e\x61pplicationEUI\x18\x01 \x01(\t\x12\x1e\n\x16\x61pplicationSoftwareKey\x18\x02 \x01(\t\x12\x15\n\rdeviceAddress\x18\x03 \x01(\t\x12\x1a\n\x12networkSoftwareKey\x18\x04 \x01(\t\"\'\n\x15GetConnectionsRequest\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\"?\n\"GetConnectionsByTransformerRequest\x12\x19\n\x11transformerNumber\x18\x01 \x01(\t\" \n\nIdentifier\x12\x12\n\nidentifier\x18\x01 \x01(\t\"\"\n\x0bIdentifiers\x12\x13\n\x0bidentifiers\x18\x01 \x03(\t\"^\n\x17\x43reateConnectionRequest\x12\x15\n\roldIdentifier\x18\x01 \x01(\t\x12,\n\nconnection\x18\x02 \x01(\x0b\x32\x18.ppconnection.Connection\"[\n\x17UpdateConnectionRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12,\n\nconnection\x18\x02 \x01(\x0b\x32\x18.ppconnection.Connection\"L\n\x12UpdateMountRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\"\n\x05mount\x18\x02 \x01(\x0b\x32\x13.ppconnection.Mount\"O\n\x13UpdateDeviceRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12$\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32\x14.ppconnection.Device\"u\n\x1cUpdateConnectionStateRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x41\n\x0f\x63onnectionState\x18\x02 \x01(\x0e\x32(.ppconnection.Connection.ConnectionState\"F\n\x10UpdateJobRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x1e\n\x03job\x18\x02 \x01(\x0b\x32\x11.ppconnection.Job\"U\n\x12UpdateLinesRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\r\n\x05line1\x18\x02 \x01(\x05\x12\r\n\x05line2\x18\x03 \x01(\x05\x12\r\n\x05line3\x18\x04 \x01(\x05\"*\n\x11GetAddressRequest\x12\x15\n\rinstallNumber\x18\x01 \x01(\t\"6\n\x1eGetDeviceBySerialNumberRequest\x12\x14\n\x0cserialNumber\x18\x01 \x01(\t\"\x19\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\"?\n\x07\x41\x64\x64ress\x12\x15\n\rstreetAddress\x18\x01 \x01(\t\x12\x0c\n\x04town\x18\x02 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x03 \x01(\t\"\"\n\x06LatLng\x12\x0b\n\x03lat\x18\x01 \x01(\x02\x12\x0b\n\x03lng\x18\x02 \x01(\x02\"\x07\n\x05\x45mpty\"B\n\x0fTransformerList\x12/\n\x0ctransformers\x18\x01 \x03(\x0b\x32\x19.ppconnection.Transformer\"\x1b\n\x0bTransformer\x12\x0c\n\x04name\x18\x01 \x01(\t\"*\n\x05Image\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t2\x8f\x0c\n\x11\x43onnectionService\x12R\n\x0eGetConnections\x12#.ppconnection.GetConnectionsRequest\x1a\x19.ppconnection.Connections\"\x00\x12V\n\x12GetLiveConnections\x12#.ppconnection.GetConnectionsRequest\x1a\x19.ppconnection.Connections\"\x00\x12l\n\x1bGetConnectionsByTransformer\x12\x30.ppconnection.GetConnectionsByTransformerRequest\x1a\x19.ppconnection.Connections\"\x00\x12\x45\n\rGetConnection\x12\x18.ppconnection.Identifier\x1a\x18.ppconnection.Connection\"\x00\x12G\n\x0fGetTransformers\x12\x13.ppconnection.Empty\x1a\x1d.ppconnection.TransformerList\"\x00\x12U\n\x10\x43reateConnection\x12%.ppconnection.CreateConnectionRequest\x1a\x18.ppconnection.Identifier\"\x00\x12O\n\x17\x43reatePendingConnection\x12\x18.ppconnection.Connection\x1a\x18.ppconnection.Identifier\"\x00\x12h\n CreateMultiplePendingConnections\x12\'.ppconnection.MultipleConnectionRequest\x1a\x19.ppconnection.Identifiers\"\x00\x12S\n\x10UpdateConnection\x12%.ppconnection.UpdateConnectionRequest\x1a\x16.ppconnection.Response\"\x00\x12\x46\n\x10\x44\x65leteConnection\x12\x18.ppconnection.Identifier\x1a\x16.ppconnection.Response\"\x00\x12]\n\x15UpdateConnectionState\x12*.ppconnection.UpdateConnectionStateRequest\x1a\x16.ppconnection.Response\"\x00\x12\x45\n\tUpdateJob\x12\x1e.ppconnection.UpdateJobRequest\x1a\x16.ppconnection.Response\"\x00\x12I\n\x0bUpdateLines\x12 .ppconnection.UpdateLinesRequest\x1a\x16.ppconnection.Response\"\x00\x12I\n\x0bUpdateMount\x12 .ppconnection.UpdateMountRequest\x1a\x16.ppconnection.Response\"\x00\x12G\n\nGetAddress\x12\x1f.ppconnection.GetAddressRequest\x1a\x16.ppconnection.Location\"\x00\x12>\n\x0c\x43reateDevice\x12\x14.ppconnection.Device\x1a\x16.ppconnection.Response\"\x00\x12_\n\x17GetDeviceBySerialNumber\x12,.ppconnection.GetDeviceBySerialNumberRequest\x1a\x14.ppconnection.Device\"\x00\x12>\n\x0b\x43reateImage\x12\x13.ppconnection.Image\x1a\x18.ppconnection.Identifier\"\x00\x12;\n\x08GetImage\x12\x18.ppconnection.Identifier\x1a\x13.ppconnection.Image\"\x00\x62\x06proto3')
 )
 
 
@@ -46,8 +46,8 @@ _CONNECTION_CONNECTIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=744,
-  serialized_end=814,
+  serialized_start=760,
+  serialized_end=830,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTION_CONNECTIONSTATE)
 
@@ -72,8 +72,8 @@ _CONNECTION_CONNECTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=816,
-  serialized_end=876,
+  serialized_start=832,
+  serialized_end=892,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTION_CONNECTIONTYPE)
 
@@ -98,8 +98,8 @@ _CONNECTION_MODELTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=878,
-  serialized_end=926,
+  serialized_start=894,
+  serialized_end=942,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTION_MODELTYPE)
 
@@ -136,8 +136,8 @@ _JOB_JOBSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1124,
-  serialized_end=1220,
+  serialized_start=1140,
+  serialized_end=1236,
 )
 _sym_db.RegisterEnumDescriptor(_JOB_JOBSTATE)
 
@@ -174,8 +174,8 @@ _MOUNT_MOUNTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1837,
-  serialized_end=1945,
+  serialized_start=1853,
+  serialized_end=1961,
 )
 _sym_db.RegisterEnumDescriptor(_MOUNT_MOUNTTYPE)
 
@@ -204,8 +204,8 @@ _MOUNT_ENCLOSURETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1947,
-  serialized_end=2021,
+  serialized_start=1963,
+  serialized_end=2037,
 )
 _sym_db.RegisterEnumDescriptor(_MOUNT_ENCLOSURETYPE)
 
@@ -419,6 +419,13 @@ _CONNECTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='images', full_name='ppconnection.Connection.images', index=19,
+      number=20, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -435,7 +442,7 @@ _CONNECTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=195,
-  serialized_end=926,
+  serialized_end=942,
 )
 
 
@@ -508,8 +515,8 @@ _JOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=929,
-  serialized_end=1220,
+  serialized_start=945,
+  serialized_end=1236,
 )
 
 
@@ -595,8 +602,8 @@ _TESTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1223,
-  serialized_end=1458,
+  serialized_start=1239,
+  serialized_end=1474,
 )
 
 
@@ -633,8 +640,8 @@ _LINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1460,
-  serialized_end=1500,
+  serialized_start=1476,
+  serialized_end=1516,
 )
 
 
@@ -699,8 +706,8 @@ _LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1502,
-  serialized_end=1617,
+  serialized_start=1518,
+  serialized_end=1633,
 )
 
 
@@ -767,8 +774,8 @@ _MOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1620,
-  serialized_end=2021,
+  serialized_start=1636,
+  serialized_end=2037,
 )
 
 
@@ -847,8 +854,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2024,
-  serialized_end=2224,
+  serialized_start=2040,
+  serialized_end=2240,
 )
 
 
@@ -899,8 +906,8 @@ _LORADETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2226,
-  serialized_end=2346,
+  serialized_start=2242,
+  serialized_end=2362,
 )
 
 
@@ -930,8 +937,8 @@ _GETCONNECTIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2348,
-  serialized_end=2387,
+  serialized_start=2364,
+  serialized_end=2403,
 )
 
 
@@ -961,8 +968,8 @@ _GETCONNECTIONSBYTRANSFORMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2389,
-  serialized_end=2452,
+  serialized_start=2405,
+  serialized_end=2468,
 )
 
 
@@ -992,8 +999,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2454,
-  serialized_end=2486,
+  serialized_start=2470,
+  serialized_end=2502,
 )
 
 
@@ -1023,8 +1030,8 @@ _IDENTIFIERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2488,
-  serialized_end=2522,
+  serialized_start=2504,
+  serialized_end=2538,
 )
 
 
@@ -1061,8 +1068,8 @@ _CREATECONNECTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2524,
-  serialized_end=2618,
+  serialized_start=2540,
+  serialized_end=2634,
 )
 
 
@@ -1099,8 +1106,8 @@ _UPDATECONNECTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2620,
-  serialized_end=2711,
+  serialized_start=2636,
+  serialized_end=2727,
 )
 
 
@@ -1137,8 +1144,8 @@ _UPDATEMOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2713,
-  serialized_end=2789,
+  serialized_start=2729,
+  serialized_end=2805,
 )
 
 
@@ -1175,8 +1182,8 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2791,
-  serialized_end=2870,
+  serialized_start=2807,
+  serialized_end=2886,
 )
 
 
@@ -1213,8 +1220,8 @@ _UPDATECONNECTIONSTATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2872,
-  serialized_end=2989,
+  serialized_start=2888,
+  serialized_end=3005,
 )
 
 
@@ -1251,8 +1258,8 @@ _UPDATEJOBREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2991,
-  serialized_end=3061,
+  serialized_start=3007,
+  serialized_end=3077,
 )
 
 
@@ -1303,8 +1310,8 @@ _UPDATELINESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3063,
-  serialized_end=3148,
+  serialized_start=3079,
+  serialized_end=3164,
 )
 
 
@@ -1334,8 +1341,8 @@ _GETADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3150,
-  serialized_end=3192,
+  serialized_start=3166,
+  serialized_end=3208,
 )
 
 
@@ -1365,8 +1372,8 @@ _GETDEVICEBYSERIALNUMBERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3194,
-  serialized_end=3248,
+  serialized_start=3210,
+  serialized_end=3264,
 )
 
 
@@ -1396,8 +1403,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3250,
-  serialized_end=3275,
+  serialized_start=3266,
+  serialized_end=3291,
 )
 
 
@@ -1441,8 +1448,8 @@ _ADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3277,
-  serialized_end=3340,
+  serialized_start=3293,
+  serialized_end=3356,
 )
 
 
@@ -1479,8 +1486,8 @@ _LATLNG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3342,
-  serialized_end=3376,
+  serialized_start=3358,
+  serialized_end=3392,
 )
 
 
@@ -1503,8 +1510,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3378,
-  serialized_end=3385,
+  serialized_start=3394,
+  serialized_end=3401,
 )
 
 
@@ -1534,8 +1541,8 @@ _TRANSFORMERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3387,
-  serialized_end=3453,
+  serialized_start=3403,
+  serialized_end=3469,
 )
 
 
@@ -1565,8 +1572,46 @@ _TRANSFORMER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3455,
-  serialized_end=3482,
+  serialized_start=3471,
+  serialized_end=3498,
+)
+
+
+_IMAGE = _descriptor.Descriptor(
+  name='Image',
+  full_name='ppconnection.Image',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='identifier', full_name='ppconnection.Image.identifier', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='ppconnection.Image.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3500,
+  serialized_end=3542,
 )
 
 _CONNECTIONS.fields_by_name['connections'].message_type = _CONNECTION
@@ -1629,6 +1674,7 @@ DESCRIPTOR.message_types_by_name['LatLng'] = _LATLNG
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['TransformerList'] = _TRANSFORMERLIST
 DESCRIPTOR.message_types_by_name['Transformer'] = _TRANSFORMER
+DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Connections = _reflection.GeneratedProtocolMessageType('Connections', (_message.Message,), {
@@ -1834,6 +1880,13 @@ Transformer = _reflection.GeneratedProtocolMessageType('Transformer', (_message.
   })
 _sym_db.RegisterMessage(Transformer)
 
+Image = _reflection.GeneratedProtocolMessageType('Image', (_message.Message,), {
+  'DESCRIPTOR' : _IMAGE,
+  '__module__' : 'connection_service_pb2'
+  # @@protoc_insertion_point(class_scope:ppconnection.Image)
+  })
+_sym_db.RegisterMessage(Image)
+
 
 
 _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
@@ -1842,8 +1895,8 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=3485,
-  serialized_end=4911,
+  serialized_start=3545,
+  serialized_end=5096,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetConnections',
@@ -1996,6 +2049,24 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETDEVICEBYSERIALNUMBERREQUEST,
     output_type=_DEVICE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateImage',
+    full_name='ppconnection.ConnectionService.CreateImage',
+    index=17,
+    containing_service=None,
+    input_type=_IMAGE,
+    output_type=_IDENTIFIER,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetImage',
+    full_name='ppconnection.ConnectionService.GetImage',
+    index=18,
+    containing_service=None,
+    input_type=_IDENTIFIER,
+    output_type=_IMAGE,
     serialized_options=None,
   ),
 ])
