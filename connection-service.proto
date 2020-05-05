@@ -223,7 +223,7 @@ message Transformer {
 }
 
 message ConnectionImage {
-    string identifier = 1;
+    string connectionId = 1;
     string value = 2;
     string dateTime = 3;
     int32 orientation = 4;

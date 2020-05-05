@@ -6970,7 +6970,7 @@ proto.ppconnection.ConnectionImage.prototype.toObject = function(opt_includeInst
  */
 proto.ppconnection.ConnectionImage.toObject = function(includeInstance, msg) {
   var f, obj = {
-    identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    connectionid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: jspb.Message.getFieldWithDefault(msg, 2, ""),
     datetime: jspb.Message.getFieldWithDefault(msg, 3, ""),
     orientation: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -7015,7 +7015,7 @@ proto.ppconnection.ConnectionImage.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setIdentifier(value);
+      msg.setConnectionid(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -7070,7 +7070,7 @@ proto.ppconnection.ConnectionImage.prototype.serializeBinary = function() {
  */
 proto.ppconnection.ConnectionImage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIdentifier();
+  f = message.getConnectionid();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -7123,10 +7123,10 @@ proto.ppconnection.ConnectionImage.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string identifier = 1;
+ * optional string connectionId = 1;
  * @return {string}
  */
-proto.ppconnection.ConnectionImage.prototype.getIdentifier = function() {
+proto.ppconnection.ConnectionImage.prototype.getConnectionid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -7135,7 +7135,7 @@ proto.ppconnection.ConnectionImage.prototype.getIdentifier = function() {
  * @param {string} value
  * @return {!proto.ppconnection.ConnectionImage} returns this
  */
-proto.ppconnection.ConnectionImage.prototype.setIdentifier = function(value) {
+proto.ppconnection.ConnectionImage.prototype.setConnectionid = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
