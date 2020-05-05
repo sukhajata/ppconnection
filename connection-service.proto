@@ -225,6 +225,11 @@ message Transformer {
 message ConnectionImage {
     string identifier = 1;
     string value = 2;
+    string dateTime = 3;
+    int32 orientation = 4;
+    float latitude = 5;
+    float longitude = 6;
+    float altitude = 7;
 }
 
 /*

@@ -6971,7 +6971,12 @@ proto.ppconnection.ConnectionImage.prototype.toObject = function(opt_includeInst
 proto.ppconnection.ConnectionImage.toObject = function(includeInstance, msg) {
   var f, obj = {
     identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+    value: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    datetime: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    orientation: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    latitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    longitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    altitude: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
   };
 
   if (includeInstance) {
@@ -7016,6 +7021,26 @@ proto.ppconnection.ConnectionImage.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatetime(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOrientation(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setLatitude(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setLongitude(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAltitude(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7059,6 +7084,41 @@ proto.ppconnection.ConnectionImage.serializeBinaryToWriter = function(message, w
       f
     );
   }
+  f = message.getDatetime();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getOrientation();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = message.getLatitude();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      5,
+      f
+    );
+  }
+  f = message.getLongitude();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
+      f
+    );
+  }
+  f = message.getAltitude();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
 };
 
 
@@ -7095,6 +7155,96 @@ proto.ppconnection.ConnectionImage.prototype.getValue = function() {
  */
 proto.ppconnection.ConnectionImage.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string dateTime = 3;
+ * @return {string}
+ */
+proto.ppconnection.ConnectionImage.prototype.getDatetime = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ppconnection.ConnectionImage} returns this
+ */
+proto.ppconnection.ConnectionImage.prototype.setDatetime = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int32 orientation = 4;
+ * @return {number}
+ */
+proto.ppconnection.ConnectionImage.prototype.getOrientation = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ppconnection.ConnectionImage} returns this
+ */
+proto.ppconnection.ConnectionImage.prototype.setOrientation = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional float latitude = 5;
+ * @return {number}
+ */
+proto.ppconnection.ConnectionImage.prototype.getLatitude = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ppconnection.ConnectionImage} returns this
+ */
+proto.ppconnection.ConnectionImage.prototype.setLatitude = function(value) {
+  return jspb.Message.setProto3FloatField(this, 5, value);
+};
+
+
+/**
+ * optional float longitude = 6;
+ * @return {number}
+ */
+proto.ppconnection.ConnectionImage.prototype.getLongitude = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ppconnection.ConnectionImage} returns this
+ */
+proto.ppconnection.ConnectionImage.prototype.setLongitude = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+/**
+ * optional float altitude = 7;
+ * @return {number}
+ */
+proto.ppconnection.ConnectionImage.prototype.getAltitude = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.ppconnection.ConnectionImage} returns this
+ */
+proto.ppconnection.ConnectionImage.prototype.setAltitude = function(value) {
+  return jspb.Message.setProto3FloatField(this, 7, value);
 };
 
 
