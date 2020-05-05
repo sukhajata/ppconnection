@@ -403,6 +403,8 @@ service ConnectionService {
 
     rpc GetImage(Identifier) returns (ConnectionImage) {}
 
+    rpc DeleteImage(Identifier) returns (Response) {}
+
     //rpc GetBlankConnection(Empty) returns (Connection) {}
 
    // rpc Geocode(Address) returns (LatLng) {}
