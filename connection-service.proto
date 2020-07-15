@@ -405,6 +405,8 @@ service ConnectionService {
 
     rpc DeleteImage(Identifier) returns (Response) {}
 
+    rpc StreamChanges(Empty) returns (stream Connection) {}
+
     //rpc GetBlankConnection(Empty) returns (Connection) {}
 
    // rpc Geocode(Address) returns (LatLng) {}

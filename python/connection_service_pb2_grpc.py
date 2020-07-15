@@ -243,6 +243,11 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.Identifier.SerializeToString,
         response_deserializer=connection__service__pb2.Response.FromString,
         )
+    self.StreamChanges = channel.unary_stream(
+        '/ppconnection.ConnectionService/StreamChanges',
+        request_serializer=connection__service__pb2.Empty.SerializeToString,
+        response_deserializer=connection__service__pb2.Connection.FromString,
+        )
 
 
 class ConnectionServiceServicer(object):
@@ -518,6 +523,13 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def StreamChanges(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ConnectionServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -620,6 +632,11 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           servicer.DeleteImage,
           request_deserializer=connection__service__pb2.Identifier.FromString,
           response_serializer=connection__service__pb2.Response.SerializeToString,
+      ),
+      'StreamChanges': grpc.unary_stream_rpc_method_handler(
+          servicer.StreamChanges,
+          request_deserializer=connection__service__pb2.Empty.FromString,
+          response_serializer=connection__service__pb2.Connection.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

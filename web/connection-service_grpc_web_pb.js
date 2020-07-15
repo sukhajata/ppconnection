@@ -1666,5 +1666,80 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.deleteImage =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Empty,
+ *   !proto.ppconnection.Connection>}
+ */
+const methodDescriptor_ConnectionService_StreamChanges = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/StreamChanges',
+  grpc.web.MethodType.SERVER_STREAMING,
+  proto.ppconnection.Empty,
+  proto.ppconnection.Connection,
+  /**
+   * @param {!proto.ppconnection.Empty} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Connection.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Empty,
+ *   !proto.ppconnection.Connection>}
+ */
+const methodInfo_ConnectionService_StreamChanges = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Connection,
+  /**
+   * @param {!proto.ppconnection.Empty} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Connection.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Empty} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Connection>}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.streamChanges =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ppconnection.ConnectionService/StreamChanges',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_StreamChanges);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Empty} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Connection>}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.streamChanges =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/ppconnection.ConnectionService/StreamChanges',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_StreamChanges);
+};
+
+
 module.exports = proto.ppconnection;
 
