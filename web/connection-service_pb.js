@@ -1398,7 +1398,9 @@ proto.ppconnection.Connection.ConnectionType = {
 proto.ppconnection.Connection.ModelType = {
   NO_MODEL_TYPE: 0,
   M11: 1,
-  M31: 2
+  M31: 2,
+  M31S: 3,
+  M31X: 4
 };
 
 /**

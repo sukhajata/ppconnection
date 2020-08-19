@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package ppconnection;
 
+option go_package = "ppconnection";
+
 message Connections {
     repeated Connection connections = 1;
 }
@@ -37,6 +39,8 @@ message Connection {
         NO_MODEL_TYPE = 0;
         M11 = 1;
         M31 = 2;
+        M31s = 3;
+        M31x = 4;
     }
     ModelType modelType = 12;
     Mount mount = 13;
