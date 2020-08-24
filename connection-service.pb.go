@@ -2636,7 +2636,7 @@ var file_connection_service_proto_rawDesc = []byte{
 	0x6e, 0x67, 0x69, 0x74, 0x75, 0x64, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x02, 0x52, 0x09, 0x6c,
 	0x6f, 0x6e, 0x67, 0x69, 0x74, 0x75, 0x64, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x61, 0x6c, 0x74, 0x69,
 	0x74, 0x75, 0x64, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x02, 0x52, 0x08, 0x61, 0x6c, 0x74, 0x69,
-	0x74, 0x75, 0x64, 0x65, 0x32, 0xe6, 0x0c, 0x0a, 0x11, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
+	0x74, 0x75, 0x64, 0x65, 0x32, 0xa0, 0x0d, 0x0a, 0x11, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
 	0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x52, 0x0a, 0x0e, 0x47, 0x65,
 	0x74, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x23, 0x2e, 0x70,
 	0x70, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x47, 0x65, 0x74, 0x43,
@@ -2738,9 +2738,12 @@ var file_connection_service_proto_rawDesc = []byte{
 	0x6c, 0x65, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x18, 0x2e, 0x70, 0x70, 0x63, 0x6f,
 	0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66,
 	0x69, 0x65, 0x72, 0x1a, 0x16, 0x2e, 0x70, 0x70, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0e, 0x5a,
-	0x0c, 0x70, 0x70, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x38, 0x0a,
+	0x07, 0x43, 0x6c, 0x65, 0x61, 0x6e, 0x75, 0x70, 0x12, 0x13, 0x2e, 0x70, 0x70, 0x63, 0x6f, 0x6e,
+	0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x16, 0x2e,
+	0x70, 0x70, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0e, 0x5a, 0x0c, 0x70, 0x70, 0x63, 0x6f, 0x6e,
+	0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2841,28 +2844,30 @@ var file_connection_service_proto_depIdxs = []int32{
 	35, // 42: ppconnection.ConnectionService.CreateImage:input_type -> ppconnection.ConnectionImage
 	18, // 43: ppconnection.ConnectionService.GetImage:input_type -> ppconnection.Identifier
 	18, // 44: ppconnection.ConnectionService.DeleteImage:input_type -> ppconnection.Identifier
-	6,  // 45: ppconnection.ConnectionService.GetConnections:output_type -> ppconnection.Connections
-	6,  // 46: ppconnection.ConnectionService.GetLiveConnections:output_type -> ppconnection.Connections
-	6,  // 47: ppconnection.ConnectionService.GetConnectionsByTransformer:output_type -> ppconnection.Connections
-	8,  // 48: ppconnection.ConnectionService.GetConnection:output_type -> ppconnection.Connection
-	33, // 49: ppconnection.ConnectionService.GetTransformers:output_type -> ppconnection.TransformerList
-	18, // 50: ppconnection.ConnectionService.CreateConnection:output_type -> ppconnection.Identifier
-	18, // 51: ppconnection.ConnectionService.CreatePendingConnection:output_type -> ppconnection.Identifier
-	19, // 52: ppconnection.ConnectionService.CreateMultiplePendingConnections:output_type -> ppconnection.Identifiers
-	29, // 53: ppconnection.ConnectionService.UpdateConnection:output_type -> ppconnection.Response
-	29, // 54: ppconnection.ConnectionService.DeleteConnection:output_type -> ppconnection.Response
-	29, // 55: ppconnection.ConnectionService.UpdateConnectionState:output_type -> ppconnection.Response
-	29, // 56: ppconnection.ConnectionService.UpdateJob:output_type -> ppconnection.Response
-	29, // 57: ppconnection.ConnectionService.UpdateLines:output_type -> ppconnection.Response
-	29, // 58: ppconnection.ConnectionService.UpdateMount:output_type -> ppconnection.Response
-	12, // 59: ppconnection.ConnectionService.GetAddress:output_type -> ppconnection.Location
-	29, // 60: ppconnection.ConnectionService.CreateDevice:output_type -> ppconnection.Response
-	14, // 61: ppconnection.ConnectionService.GetDeviceBySerialNumber:output_type -> ppconnection.Device
-	18, // 62: ppconnection.ConnectionService.CreateImage:output_type -> ppconnection.Identifier
-	35, // 63: ppconnection.ConnectionService.GetImage:output_type -> ppconnection.ConnectionImage
-	29, // 64: ppconnection.ConnectionService.DeleteImage:output_type -> ppconnection.Response
-	45, // [45:65] is the sub-list for method output_type
-	25, // [25:45] is the sub-list for method input_type
+	32, // 45: ppconnection.ConnectionService.Cleanup:input_type -> ppconnection.Empty
+	6,  // 46: ppconnection.ConnectionService.GetConnections:output_type -> ppconnection.Connections
+	6,  // 47: ppconnection.ConnectionService.GetLiveConnections:output_type -> ppconnection.Connections
+	6,  // 48: ppconnection.ConnectionService.GetConnectionsByTransformer:output_type -> ppconnection.Connections
+	8,  // 49: ppconnection.ConnectionService.GetConnection:output_type -> ppconnection.Connection
+	33, // 50: ppconnection.ConnectionService.GetTransformers:output_type -> ppconnection.TransformerList
+	18, // 51: ppconnection.ConnectionService.CreateConnection:output_type -> ppconnection.Identifier
+	18, // 52: ppconnection.ConnectionService.CreatePendingConnection:output_type -> ppconnection.Identifier
+	19, // 53: ppconnection.ConnectionService.CreateMultiplePendingConnections:output_type -> ppconnection.Identifiers
+	29, // 54: ppconnection.ConnectionService.UpdateConnection:output_type -> ppconnection.Response
+	29, // 55: ppconnection.ConnectionService.DeleteConnection:output_type -> ppconnection.Response
+	29, // 56: ppconnection.ConnectionService.UpdateConnectionState:output_type -> ppconnection.Response
+	29, // 57: ppconnection.ConnectionService.UpdateJob:output_type -> ppconnection.Response
+	29, // 58: ppconnection.ConnectionService.UpdateLines:output_type -> ppconnection.Response
+	29, // 59: ppconnection.ConnectionService.UpdateMount:output_type -> ppconnection.Response
+	12, // 60: ppconnection.ConnectionService.GetAddress:output_type -> ppconnection.Location
+	29, // 61: ppconnection.ConnectionService.CreateDevice:output_type -> ppconnection.Response
+	14, // 62: ppconnection.ConnectionService.GetDeviceBySerialNumber:output_type -> ppconnection.Device
+	18, // 63: ppconnection.ConnectionService.CreateImage:output_type -> ppconnection.Identifier
+	35, // 64: ppconnection.ConnectionService.GetImage:output_type -> ppconnection.ConnectionImage
+	29, // 65: ppconnection.ConnectionService.DeleteImage:output_type -> ppconnection.Response
+	29, // 66: ppconnection.ConnectionService.Cleanup:output_type -> ppconnection.Response
+	46, // [46:67] is the sub-list for method output_type
+	25, // [25:46] is the sub-list for method input_type
 	25, // [25:25] is the sub-list for extension type_name
 	25, // [25:25] is the sub-list for extension extendee
 	0,  // [0:25] is the sub-list for field type_name
@@ -3288,6 +3293,7 @@ type ConnectionServiceClient interface {
 	CreateImage(ctx context.Context, in *ConnectionImage, opts ...grpc.CallOption) (*Identifier, error)
 	GetImage(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*ConnectionImage, error)
 	DeleteImage(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*Response, error)
+	Cleanup(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Response, error)
 }
 
 type connectionServiceClient struct {
@@ -3478,6 +3484,15 @@ func (c *connectionServiceClient) DeleteImage(ctx context.Context, in *Identifie
 	return out, nil
 }
 
+func (c *connectionServiceClient) Cleanup(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/ppconnection.ConnectionService/Cleanup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ConnectionServiceServer is the server API for ConnectionService service.
 type ConnectionServiceServer interface {
 	GetConnections(context.Context, *GetConnectionsRequest) (*Connections, error)
@@ -3500,6 +3515,7 @@ type ConnectionServiceServer interface {
 	CreateImage(context.Context, *ConnectionImage) (*Identifier, error)
 	GetImage(context.Context, *Identifier) (*ConnectionImage, error)
 	DeleteImage(context.Context, *Identifier) (*Response, error)
+	Cleanup(context.Context, *Empty) (*Response, error)
 }
 
 // UnimplementedConnectionServiceServer can be embedded to have forward compatible implementations.
@@ -3565,6 +3581,9 @@ func (*UnimplementedConnectionServiceServer) GetImage(context.Context, *Identifi
 }
 func (*UnimplementedConnectionServiceServer) DeleteImage(context.Context, *Identifier) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteImage not implemented")
+}
+func (*UnimplementedConnectionServiceServer) Cleanup(context.Context, *Empty) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Cleanup not implemented")
 }
 
 func RegisterConnectionServiceServer(s *grpc.Server, srv ConnectionServiceServer) {
@@ -3931,6 +3950,24 @@ func _ConnectionService_DeleteImage_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ConnectionService_Cleanup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ConnectionServiceServer).Cleanup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ppconnection.ConnectionService/Cleanup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ConnectionServiceServer).Cleanup(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ConnectionService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "ppconnection.ConnectionService",
 	HandlerType: (*ConnectionServiceServer)(nil),
@@ -4014,6 +4051,10 @@ var _ConnectionService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteImage",
 			Handler:    _ConnectionService_DeleteImage_Handler,
+		},
+		{
+			MethodName: "Cleanup",
+			Handler:    _ConnectionService_Cleanup_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

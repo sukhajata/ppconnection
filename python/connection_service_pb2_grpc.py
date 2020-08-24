@@ -243,6 +243,11 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.Identifier.SerializeToString,
         response_deserializer=connection__service__pb2.Response.FromString,
         )
+    self.Cleanup = channel.unary_unary(
+        '/ppconnection.ConnectionService/Cleanup',
+        request_serializer=connection__service__pb2.Empty.SerializeToString,
+        response_deserializer=connection__service__pb2.Response.FromString,
+        )
 
 
 class ConnectionServiceServicer(object):
@@ -518,6 +523,13 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Cleanup(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ConnectionServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -619,6 +631,11 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
       'DeleteImage': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteImage,
           request_deserializer=connection__service__pb2.Identifier.FromString,
+          response_serializer=connection__service__pb2.Response.SerializeToString,
+      ),
+      'Cleanup': grpc.unary_unary_rpc_method_handler(
+          servicer.Cleanup,
+          request_deserializer=connection__service__pb2.Empty.FromString,
           response_serializer=connection__service__pb2.Response.SerializeToString,
       ),
   }

@@ -409,6 +409,8 @@ service ConnectionService {
 
     rpc DeleteImage(Identifier) returns (Response) {}
 
+    rpc Cleanup(Empty) returns (Response) {}
+
     //rpc StreamChanges(Empty) returns (stream Connection) {}
 
     //rpc GetBlankConnection(Empty) returns (Connection) {}
