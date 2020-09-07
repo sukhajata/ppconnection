@@ -163,6 +163,11 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.Identifier.SerializeToString,
         response_deserializer=connection__service__pb2.Connection.FromString,
         )
+    self.GetConnectionsForIDNumber = channel.unary_unary(
+        '/ppconnection.ConnectionService/GetConnectionsForIDNumber',
+        request_serializer=connection__service__pb2.Identifier.SerializeToString,
+        response_deserializer=connection__service__pb2.Connections.FromString,
+        )
     self.GetTransformers = channel.unary_unary(
         '/ppconnection.ConnectionService/GetTransformers',
         request_serializer=connection__service__pb2.Empty.SerializeToString,
@@ -411,6 +416,13 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetConnectionsForIDNumber(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetTransformers(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -552,6 +564,11 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           servicer.GetConnection,
           request_deserializer=connection__service__pb2.Identifier.FromString,
           response_serializer=connection__service__pb2.Connection.SerializeToString,
+      ),
+      'GetConnectionsForIDNumber': grpc.unary_unary_rpc_method_handler(
+          servicer.GetConnectionsForIDNumber,
+          request_deserializer=connection__service__pb2.Identifier.FromString,
+          response_serializer=connection__service__pb2.Connections.SerializeToString,
       ),
       'GetTransformers': grpc.unary_unary_rpc_method_handler(
           servicer.GetTransformers,

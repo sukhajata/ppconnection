@@ -389,6 +389,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.getConnection =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Identifier,
+ *   !proto.ppconnection.Connections>}
+ */
+const methodDescriptor_ConnectionService_GetConnectionsForIDNumber = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/GetConnectionsForIDNumber',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Identifier,
+  proto.ppconnection.Connections,
+  /**
+   * @param {!proto.ppconnection.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Connections.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Identifier,
+ *   !proto.ppconnection.Connections>}
+ */
+const methodInfo_ConnectionService_GetConnectionsForIDNumber = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Connections,
+  /**
+   * @param {!proto.ppconnection.Identifier} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Connections.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Connections)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Connections>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.getConnectionsForIDNumber =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetConnectionsForIDNumber',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetConnectionsForIDNumber,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Identifier} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Connections>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.getConnectionsForIDNumber =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/GetConnectionsForIDNumber',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_GetConnectionsForIDNumber);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.ppconnection.Empty,
  *   !proto.ppconnection.TransformerList>}
  */
@@ -1663,6 +1743,86 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.deleteImage =
       request,
       metadata || {},
       methodDescriptor_ConnectionService_DeleteImage);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.ppconnection.Empty,
+ *   !proto.ppconnection.Response>}
+ */
+const methodDescriptor_ConnectionService_Cleanup = new grpc.web.MethodDescriptor(
+  '/ppconnection.ConnectionService/Cleanup',
+  grpc.web.MethodType.UNARY,
+  proto.ppconnection.Empty,
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.Empty} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.ppconnection.Empty,
+ *   !proto.ppconnection.Response>}
+ */
+const methodInfo_ConnectionService_Cleanup = new grpc.web.AbstractClientBase.MethodInfo(
+  proto.ppconnection.Response,
+  /**
+   * @param {!proto.ppconnection.Empty} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.ppconnection.Response.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.ppconnection.Empty} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.ppconnection.Response)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.ppconnection.Response>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.ppconnection.ConnectionServiceClient.prototype.cleanup =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/ppconnection.ConnectionService/Cleanup',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_Cleanup,
+      callback);
+};
+
+
+/**
+ * @param {!proto.ppconnection.Empty} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.ppconnection.Response>}
+ *     A native promise that resolves to the response
+ */
+proto.ppconnection.ConnectionServicePromiseClient.prototype.cleanup =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/ppconnection.ConnectionService/Cleanup',
+      request,
+      metadata || {},
+      methodDescriptor_ConnectionService_Cleanup);
 };
 
 

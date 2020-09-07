@@ -377,6 +377,8 @@ service ConnectionService {
 
     rpc GetConnection(Identifier) returns (Connection) {}
 
+    rpc GetConnectionsForIDNumber(Identifier) returns (Connections) {}
+
     rpc GetTransformers(Empty) returns (TransformerList) {}
 
     rpc CreateConnection(CreateConnectionRequest) returns (Identifier) {}
