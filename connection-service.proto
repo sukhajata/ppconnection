@@ -51,6 +51,7 @@ message Connection {
     string transformer = 18;
     int64 rating = 19;
     repeated string images = 20;
+    map <string, string> slots = 21;
 }
 
 message Job {
