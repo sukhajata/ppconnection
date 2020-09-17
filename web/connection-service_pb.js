@@ -12,6 +12,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+goog.exportSymbol('proto.ppconnection.AddSlotRequest', null, global);
 goog.exportSymbol('proto.ppconnection.Address', null, global);
 goog.exportSymbol('proto.ppconnection.Connection', null, global);
 goog.exportSymbol('proto.ppconnection.Connection.ConnectionState', null, global);
@@ -39,7 +40,6 @@ goog.exportSymbol('proto.ppconnection.Mount.EnclosureType', null, global);
 goog.exportSymbol('proto.ppconnection.Mount.MountType', null, global);
 goog.exportSymbol('proto.ppconnection.MultipleConnectionRequest', null, global);
 goog.exportSymbol('proto.ppconnection.Response', null, global);
-goog.exportSymbol('proto.ppconnection.Slot', null, global);
 goog.exportSymbol('proto.ppconnection.TestResult', null, global);
 goog.exportSymbol('proto.ppconnection.Transformer', null, global);
 goog.exportSymbol('proto.ppconnection.TransformerList', null, global);
@@ -689,16 +689,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.ppconnection.Slot = function(opt_data) {
+proto.ppconnection.AddSlotRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.ppconnection.Slot, jspb.Message);
+goog.inherits(proto.ppconnection.AddSlotRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.ppconnection.Slot.displayName = 'proto.ppconnection.Slot';
+  proto.ppconnection.AddSlotRequest.displayName = 'proto.ppconnection.AddSlotRequest';
 }
 
 /**
@@ -7321,8 +7321,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.ppconnection.Slot.prototype.toObject = function(opt_includeInstance) {
-  return proto.ppconnection.Slot.toObject(opt_includeInstance, this);
+proto.ppconnection.AddSlotRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.ppconnection.AddSlotRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -7331,13 +7331,14 @@ proto.ppconnection.Slot.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.ppconnection.Slot} msg The msg instance to transform.
+ * @param {!proto.ppconnection.AddSlotRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ppconnection.Slot.toObject = function(includeInstance, msg) {
+proto.ppconnection.AddSlotRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    slot: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    slot: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -7351,23 +7352,23 @@ proto.ppconnection.Slot.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.ppconnection.Slot}
+ * @return {!proto.ppconnection.AddSlotRequest}
  */
-proto.ppconnection.Slot.deserializeBinary = function(bytes) {
+proto.ppconnection.AddSlotRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.ppconnection.Slot;
-  return proto.ppconnection.Slot.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.ppconnection.AddSlotRequest;
+  return proto.ppconnection.AddSlotRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.ppconnection.Slot} msg The message object to deserialize into.
+ * @param {!proto.ppconnection.AddSlotRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.ppconnection.Slot}
+ * @return {!proto.ppconnection.AddSlotRequest}
  */
-proto.ppconnection.Slot.deserializeBinaryFromReader = function(msg, reader) {
+proto.ppconnection.AddSlotRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7375,6 +7376,10 @@ proto.ppconnection.Slot.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIdentifier(value);
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSlot(value);
       break;
@@ -7391,9 +7396,9 @@ proto.ppconnection.Slot.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.ppconnection.Slot.prototype.serializeBinary = function() {
+proto.ppconnection.AddSlotRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.ppconnection.Slot.serializeBinaryToWriter(this, writer);
+  proto.ppconnection.AddSlotRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7401,16 +7406,23 @@ proto.ppconnection.Slot.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.ppconnection.Slot} message
+ * @param {!proto.ppconnection.AddSlotRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ppconnection.Slot.serializeBinaryToWriter = function(message, writer) {
+proto.ppconnection.AddSlotRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getIdentifier();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getSlot();
   if (f !== 0) {
     writer.writeInt32(
-      1,
+      2,
       f
     );
   }
@@ -7418,20 +7430,38 @@ proto.ppconnection.Slot.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int32 slot = 1;
+ * optional string identifier = 1;
+ * @return {string}
+ */
+proto.ppconnection.AddSlotRequest.prototype.getIdentifier = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.ppconnection.AddSlotRequest} returns this
+ */
+proto.ppconnection.AddSlotRequest.prototype.setIdentifier = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 slot = 2;
  * @return {number}
  */
-proto.ppconnection.Slot.prototype.getSlot = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.ppconnection.AddSlotRequest.prototype.getSlot = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.ppconnection.Slot} returns this
+ * @return {!proto.ppconnection.AddSlotRequest} returns this
  */
-proto.ppconnection.Slot.prototype.setSlot = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.ppconnection.AddSlotRequest.prototype.setSlot = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

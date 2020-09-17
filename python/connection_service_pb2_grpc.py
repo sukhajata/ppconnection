@@ -255,7 +255,7 @@ class ConnectionServiceStub(object):
         )
     self.AddSlot = channel.unary_unary(
         '/ppconnection.ConnectionService/AddSlot',
-        request_serializer=connection__service__pb2.Slot.SerializeToString,
+        request_serializer=connection__service__pb2.AddSlotRequest.SerializeToString,
         response_deserializer=connection__service__pb2.Identifier.FromString,
         )
 
@@ -669,7 +669,7 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
       ),
       'AddSlot': grpc.unary_unary_rpc_method_handler(
           servicer.AddSlot,
-          request_deserializer=connection__service__pb2.Slot.FromString,
+          request_deserializer=connection__service__pb2.AddSlotRequest.FromString,
           response_serializer=connection__service__pb2.Identifier.SerializeToString,
       ),
   }

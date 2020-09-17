@@ -1829,16 +1829,16 @@ proto.ppconnection.ConnectionServicePromiseClient.prototype.cleanup =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.ppconnection.Slot,
+ *   !proto.ppconnection.AddSlotRequest,
  *   !proto.ppconnection.Identifier>}
  */
 const methodDescriptor_ConnectionService_AddSlot = new grpc.web.MethodDescriptor(
   '/ppconnection.ConnectionService/AddSlot',
   grpc.web.MethodType.UNARY,
-  proto.ppconnection.Slot,
+  proto.ppconnection.AddSlotRequest,
   proto.ppconnection.Identifier,
   /**
-   * @param {!proto.ppconnection.Slot} request
+   * @param {!proto.ppconnection.AddSlotRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1851,13 +1851,13 @@ const methodDescriptor_ConnectionService_AddSlot = new grpc.web.MethodDescriptor
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.ppconnection.Slot,
+ *   !proto.ppconnection.AddSlotRequest,
  *   !proto.ppconnection.Identifier>}
  */
 const methodInfo_ConnectionService_AddSlot = new grpc.web.AbstractClientBase.MethodInfo(
   proto.ppconnection.Identifier,
   /**
-   * @param {!proto.ppconnection.Slot} request
+   * @param {!proto.ppconnection.AddSlotRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1868,7 +1868,7 @@ const methodInfo_ConnectionService_AddSlot = new grpc.web.AbstractClientBase.Met
 
 
 /**
- * @param {!proto.ppconnection.Slot} request The
+ * @param {!proto.ppconnection.AddSlotRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1889,7 +1889,7 @@ proto.ppconnection.ConnectionServiceClient.prototype.addSlot =
 
 
 /**
- * @param {!proto.ppconnection.Slot} request The
+ * @param {!proto.ppconnection.AddSlotRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
