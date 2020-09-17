@@ -237,6 +237,9 @@ message ConnectionImage {
     float altitude = 7;
 }
 
+message Slot {
+    int32 slot = 1;
+}
 /*
 message DataMsgRequest {
     string startTime = 1;
@@ -413,6 +416,8 @@ service ConnectionService {
     rpc DeleteImage(Identifier) returns (Response) {}
 
     rpc Cleanup(Empty) returns (Response) {}
+
+    rpc AddSlot(Slot) returns (Identifier) {}
 
     //rpc StreamChanges(Empty) returns (stream Connection) {}
 

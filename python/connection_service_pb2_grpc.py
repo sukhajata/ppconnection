@@ -253,6 +253,11 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.Empty.SerializeToString,
         response_deserializer=connection__service__pb2.Response.FromString,
         )
+    self.AddSlot = channel.unary_unary(
+        '/ppconnection.ConnectionService/AddSlot',
+        request_serializer=connection__service__pb2.Slot.SerializeToString,
+        response_deserializer=connection__service__pb2.Identifier.FromString,
+        )
 
 
 class ConnectionServiceServicer(object):
@@ -542,6 +547,13 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def AddSlot(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ConnectionServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -654,6 +666,11 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
           servicer.Cleanup,
           request_deserializer=connection__service__pb2.Empty.FromString,
           response_serializer=connection__service__pb2.Response.SerializeToString,
+      ),
+      'AddSlot': grpc.unary_unary_rpc_method_handler(
+          servicer.AddSlot,
+          request_deserializer=connection__service__pb2.Slot.FromString,
+          response_serializer=connection__service__pb2.Identifier.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
