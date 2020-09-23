@@ -41,6 +41,7 @@ message Connection {
         M31 = 2;
         M31s = 3;
         M31x = 4;
+        C11_S11 = 5;
     }
     ModelType modelType = 12;
     Mount mount = 13;

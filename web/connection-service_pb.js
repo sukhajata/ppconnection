@@ -1433,7 +1433,8 @@ proto.ppconnection.Connection.ModelType = {
   M11: 1,
   M31: 2,
   M31S: 3,
-  M31X: 4
+  M31X: 4,
+  C11_S11: 5
 };
 
 /**
