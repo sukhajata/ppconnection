@@ -218,6 +218,11 @@ class ConnectionServiceStub(object):
         request_serializer=connection__service__pb2.UpdateMountRequest.SerializeToString,
         response_deserializer=connection__service__pb2.Response.FromString,
         )
+    self.UpdateIdentityTable = channel.unary_unary(
+        '/ppconnection.ConnectionService/UpdateIdentityTable',
+        request_serializer=connection__service__pb2.Identifier.SerializeToString,
+        response_deserializer=connection__service__pb2.Response.FromString,
+        )
     self.GetAddress = channel.unary_unary(
         '/ppconnection.ConnectionService/GetAddress',
         request_serializer=connection__service__pb2.GetAddressRequest.SerializeToString,
@@ -498,6 +503,13 @@ class ConnectionServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateIdentityTable(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetAddress(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -630,6 +642,11 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
       'UpdateMount': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateMount,
           request_deserializer=connection__service__pb2.UpdateMountRequest.FromString,
+          response_serializer=connection__service__pb2.Response.SerializeToString,
+      ),
+      'UpdateIdentityTable': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateIdentityTable,
+          request_deserializer=connection__service__pb2.Identifier.FromString,
           response_serializer=connection__service__pb2.Response.SerializeToString,
       ),
       'GetAddress': grpc.unary_unary_rpc_method_handler(

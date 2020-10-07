@@ -405,6 +405,8 @@ service ConnectionService {
 
     rpc UpdateMount(UpdateMountRequest) returns (Response) {}
 
+    rpc UpdateIdentityTable(Identifier) returns (Response) {}
+
     rpc GetAddress(GetAddressRequest) returns (Location) {}
 
     rpc CreateDevice(Device) returns (Response) {}
